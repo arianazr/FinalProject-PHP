@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="store.css" />
+    <script
+      src="https://kit.fontawesome.com/73603c0753.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/circular-std" rel="stylesheet" />
+    <script src="main.js" defer></script>
+    <link href="https://fonts.cdnfonts.com/css/circular-std" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Store | ThriftOnline</title>
+  </head>
+  <body id="bodyoverflow">
+    <input type="checkbox" name="nav-toggle" id="nav-toggle" />
+    <label for="nav-toggle">
+      <div class="nav__background"></div>
+      <div class="hamburger-icon" id="nav-toggle-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="38"
+          height="38"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+          id="hamburger"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="currentColor"
+          class="bi bi-x-lg"
+          viewBox="0 0 16 16"
+          id="cancel-nav"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+          />
+        </svg>
+      </div>
+    </label>
+    <nav>
+      <div style="transform: none" id="transform">
+        <div id="nav-links">
+          <a class="nav-link" href="index.html">
+            <h2 class="nav-link-label rubik-font">Home</h2>
+            <img class="nav-link-image" src="home-src.png" />
+          </a>
+          <a class="nav-link" href="#">
+            <h2 id="active" class="nav-link-label rubik-font">Store</h2>
+            <img class="nav-link-image" src="store-nav.png" />
+          </a>
+          <a class="nav-link" href="about.html">
+            <h2 class="nav-link-label rubik-font">About</h2>
+            <img class="nav-link-image" src="about-scr.png" />
+          </a>
+          <a class="nav-link" href="signup.html">
+            <h2 class="nav-link-label rubik-font">Contact</h2>
+            <img class="nav-link-image" src="about-nav.png" />
+          </a>
+          <a class="nav-link" href="#">
+            <h2 class="nav-link-label rubik-font">jobs</h2>
+            <img class="nav-link-image" src="jobs.jpg" />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main style="position: relative">
+      <header>
+        <h1 class="page-logo">To.</h1>
+        <h1 class="page-titles">
+          THRIFTONLINE <br /><span>Most reliable online shop.</span>
+        </h1>
+      </header>
+      <aside class="fileter__section">
+        <div aria-expanded="false" id="filter-wrp" class="fileter__wrapper">
+          <div class="filter__container">
+            <div
+              style="width: 100%; display: flex; justify-content: center"
+              class="filter-cancel__button-container"
+            >
+              <button
+                style="margin-top: 1.3125rem"
+                class="filter__button filter-btn"
+                id="filter-toggle"
+              >
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                    style="transition: transform 350ms"
+                  >
+                    <path
+                      d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                    />
+                  </svg>
+                </span>
+                <span class="filter__button-label">Close filters</span>
+              </button>
+            </div>
+            <ul class="filter__list">
+              <li class="filter__listed-items">
+                <input
+                  type="checkbox"
+                  class="filter__check"
+                  id="filter-check"
+                />
+                <label
+                  class="labels"
+                  id="button-height-toggle"
+                  for="filter-check"
+                  ><p class="title__sizes">Size</p>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    id="caret-down"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+                <div class="size__filter" style="height: 0px">
+                  <p class="size__title">Pick Your Size</p>
+                  <ul class="sizes__list">
+                    <li>
+                      <input type="checkbox" name="XXS" id="XXS" />
+                      <label for="XXS">XXS/40</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="XS" id="XS" />
+                      <label for="XS">XS/42</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="S" id="S" />
+                      <label for="S">S/44-46</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="M" id="M" />
+                      <label for="M">M/48-50</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="L" id="L" />
+                      <label for="L">L/52-54</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="XL" id="XL" />
+                      <label for="XL">XL/56</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="XXL" id="XXL" />
+                      <label for="XXL">XXL/58</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter__listed-items">
+                <input
+                  type="checkbox"
+                  class="filter__check"
+                  id="filter-check2"
+                />
+                <label
+                  id="button-height-toggle"
+                  class="labels"
+                  for="filter-check2"
+                  ><p class="title__sizes">Designer</p>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    id="caret-down"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+                <div class="size__filter" style="height: 0px">
+                  <div class="form__container-searchbar">
+                    <form action="#" class="searchbar__container">
+                      <i
+                        class="fa-solid fa-magnifying-glass"
+                        id="searchbar-icon"
+                      ></i>
+                      <input
+                        type="text"
+                        name="searchbar"
+                        id="searchbar"
+                        class="searchbar"
+                        placeholder="Search Desginers"
+                      />
+                    </form>
+                  </div>
+                  <ul class="sizes__list">
+                    <li>
+                      <input type="checkbox" id="Vintage" />
+                      <label for="Vintage">Vintage</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Streetwear" />
+                      <label for="Streetwear">Streetwear</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="JapaneseBrand" />
+                      <label for="JapaneseBrand">Japanese Brand</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="BandTees" />
+                      <label for="BandTees">Band Tees</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="BandTees" />
+                      <label for="BandTees">Band Tees</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="nike" />
+                      <label for="nike">Nike</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Supreme" />
+                      <label for="Supreme">Supreme</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="Adidas" />
+                      <label for="Adidas">Adidas</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter__listed-items">
+                <input
+                  type="checkbox"
+                  class="filter__check"
+                  id="filter-check3"
+                />
+                <label
+                  id="button-height-toggle"
+                  class="labels"
+                  for="filter-check3"
+                  ><p class="title__sizes">Price</p>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    id="caret-down"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+                <div class="size__filter" style="height: 0px">
+                  <div class="prices__container">
+                    <div class="min" style="position: relative">
+                      <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
+                      <input
+                        type="number"
+                        name="min"
+                        id="min"
+                        placeholder="MIN"
+                        class="price__selector"
+                      />
+                    </div>
+                    <div class="max" style="position: relative">
+                      <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
+                      <input
+                        type="number"
+                        name="max"
+                        id="max"
+                        placeholder="MAX"
+                        class="price__selector"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="filter__listed-items">
+                <input
+                  type="checkbox"
+                  class="filter__check"
+                  id="filter-check4"
+                />
+                <label
+                  id="button-height-toggle"
+                  class="labels"
+                  for="filter-check4"
+                >
+                  <p class="title__sizes">Condition</p>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    id="caret-down"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+                <div class="size__filter" style="height: 0px">
+                  <ul class="sizes__list">
+                    <li>
+                      <input type="checkbox" name="new" id="new" />
+                      <label for="new">New/Never Worn</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="gentle" id="gentle" />
+                      <label for="gentle">Gently Used</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="used" id="used" />
+                      <label for="used">Used</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="very" id="very" />
+                      <label for="very">Very Worn</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="notspecified"
+                        id="notspecified"
+                      />
+                      <label for="notspecified">Not Specified</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter__listed-items">
+                <input
+                  type="checkbox"
+                  class="filter__check"
+                  id="filter-check5"
+                />
+                <label
+                  id="button-height-toggle"
+                  class="labels"
+                  for="filter-check5"
+                >
+                  <p class="title__sizes">Filter By Keyword</p>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    id="caret-down"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+                <div class="size__filter" style="height: 0px">
+                  <div class="form__container-searchbar">
+                    <form action="#" class="searchbar__container">
+                      <i
+                        class="fa-solid fa-magnifying-glass"
+                        id="searchbar-icon"
+                      ></i>
+                      <input
+                        type="text"
+                        name="searchbar"
+                        id="searchbar"
+                        class="searchbar"
+                        placeholder="Filter by keyword"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <section class="row nav__Row">
+        <div class="main-bg">
+          <div id="main-height" class="main">
+            <div class="img__wrapper">
+              <img
+                class="store-logo"
+                src="Component 1.png"
+                alt="All clothes Thrift Online Store"
+              />
+            </div>
+            <div class="xcVq">
+              <div class="img__wrapper-left">
+                <div class="img__wrapper-left__inner">
+                  <ul class="wrapper__items">
+                    <li class="wrapper__items-listed">
+                      <a href="#" class="wrapper__links">
+                        <div class="wrapper__svg">
+                          <svg
+                            width="64"
+                            height="64"
+                            viewBox="0 -9.89 80.819 80.819"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Group_116"
+                              data-name="Group 116"
+                              transform="translate(-314.973 -274.638)"
+                            >
+                              <g id="Group_42" data-name="Group 42">
+                                <g id="Group_41" data-name="Group 41">
+                                  <path
+                                    id="Path_23"
+                                    data-name="Path 23"
+                                    d="M314.995,305.6l1.615,16.244a3.26,3.26,0,0,0,.628,1.526l.718,3.5a.973.973,0,0,0,.987.718,30.4,30.4,0,0,1,7.449,0h.18a.862.862,0,0,0,.808-.628l.718-3.321a3.59,3.59,0,0,0,.9-2.333l.359-19.116,2.513.359c-.09,3.68-.359,19.386.808,28.9h0c.18,1.346.359,2.513.539,3.59a.781.781,0,0,0,.9.628c.09,0,9.424-.9,21.181-.9s21.091.808,21.181.9h.09a.851.851,0,0,0,.808-.718,30.761,30.761,0,0,0,.538-3.59h0c1.167-9.513.9-25.219.808-28.9l2.513-.359.359,19.027a4.013,4.013,0,0,0,.808,2.244h0l.718,3.321a.862.862,0,0,0,.808.628h.179a30.239,30.239,0,0,1,7.449,0,.889.889,0,0,0,.987-.718l.718-3.5a2.341,2.341,0,0,0,.628-1.526l1.885-15.975a3.118,3.118,0,0,0-.539-2.154L383.652,284.6a2.475,2.475,0,0,0-1.167-.987l-4.757-2.154h0l-14-6.282a2.257,2.257,0,0,0-1.257-.538H362.2a2.344,2.344,0,0,0-1.8.9,11.406,11.406,0,0,1-10.052,0,2.341,2.341,0,0,0-1.8-.9h-.269a3.16,3.16,0,0,0-1.257.538l-14,6.282h0l-4.757,2.154a2.485,2.485,0,0,0-1.167.987l-11.577,18.847A3.02,3.02,0,0,0,314.995,305.6Zm47.747-28.63a8.423,8.423,0,0,1-1.167,3.321,7.435,7.435,0,0,1-12.386,0,8.436,8.436,0,0,1-1.167-3.321.594.594,0,0,1,.538-.628h.09a.517.517,0,0,1,.539.538,7.98,7.98,0,0,0,.987,2.782,5.841,5.841,0,0,0,5.2,2.782,5.569,5.569,0,0,0,5.2-2.782,7.365,7.365,0,0,0,1.077-2.872.58.58,0,0,1,.539-.539h.09A.62.62,0,0,1,362.742,276.969Zm-7.36,1.346a14.881,14.881,0,0,0,4.308-.718,4.4,4.4,0,0,1-.538,1.167,4.051,4.051,0,0,1-3.77,1.974,3.959,3.959,0,0,1-3.769-1.974,3.413,3.413,0,0,1-.539-1.167A14.881,14.881,0,0,0,355.382,278.315Zm20.912,4.308a28.135,28.135,0,0,0-2.064,12.924c.359,3.41,1.167,5.654,2.423,6.641.18.09.269.18.449.269.09,3.321.359,18.488-.718,28-2.6-.18-10.949-.808-21.091-.808s-18.488.628-21.091.808c-1.077-9.513-.718-24.681-.718-28,.18-.09.269-.18.449-.269,1.257-.987,2.064-3.141,2.423-6.641.628-5.475-1.257-10.86-2.064-12.924l11.847-5.3a10.656,10.656,0,0,0,1.436,3.77,8.63,8.63,0,0,0,7.718,4.128,8.73,8.73,0,0,0,7.718-4.128,10.649,10.649,0,0,0,1.436-3.77Zm17.77,22.8-1.615,16.245a.329.329,0,0,1-.09.269,17.494,17.494,0,0,0-8.706.09,2.61,2.61,0,0,1-.18-.808l-.359-20.014V289.534a.9.9,0,1,0-1.794,0v10.949l-3.41.449c-.18-.09-1.436-.628-1.974-5.564a28,28,0,0,1,1.885-12.026l3.949,1.8a.7.7,0,0,1,.359.359l11.578,18.847A1.572,1.572,0,0,1,394.064,305.419ZM384.909,325.7l-.538-2.154a16.013,16.013,0,0,1,7.27,0l-.359,2.154A36.838,36.838,0,0,0,384.909,325.7Zm-50.169,8.257c-.09-.539-.18-1.167-.269-1.8,2.6-.18,10.86-.808,20.911-.808s18.219.628,20.911.808c-.09.628-.179,1.257-.269,1.8-2.513-.18-10.68-.808-20.642-.808S337.253,333.69,334.74,333.959ZM319.483,325.7l-.449-2.154a16.116,16.116,0,0,1,7.27,0l-.449,2.154A36.825,36.825,0,0,0,319.483,325.7ZM316.7,305.419a2.136,2.136,0,0,1,.269-1.077l11.578-18.847c.09-.18.269-.269.359-.359l3.949-1.8a28.023,28.023,0,0,1,1.885,12.026c-.538,4.936-1.8,5.475-1.974,5.564l-3.41-.449V289.533a.9.9,0,0,0-.9-.9.848.848,0,0,0-.9.9V301.2l-.359,20.014a2.622,2.622,0,0,1-.18.808,17.494,17.494,0,0,0-8.706-.09c0-.09-.09-.18-.09-.269Z"
+                                    fill="#1e1e1c"
+                                  />
+                                </g>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="wrapper__label-container">
+                          <h2 class="wrapper-card-title">TOPS</h2>
+                          <ul class="wrapper-card-listings">
+                            <li>Listings</li>
+                            <li>12.609</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="wrapper__items-listed">
+                      <a href="#" class="wrapper__links">
+                        <div class="wrapper__svg">
+                          <svg
+                            width="64"
+                            height="64"
+                            viewBox="-11.04 0 61.385 61.385"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Pants"
+                              transform="translate(-125.1 -367.571)"
+                            >
+                              <g id="Group_95" data-name="Group 95">
+                                <path
+                                  id="Path_72"
+                                  data-name="Path 72"
+                                  d="M156.556,428.956c-7.447,0-7.762-.316-8.066-.622-.288-.292-.61-.619-3.992-32.189-3.046,31.409-3.128,31.669-3.165,31.786-.254.8-.307.963-8.478.963-7.144,0-7.24-.187-7.56-.807-.389-.752-.078-27.814-.074-28.088.225-18.553.674-28.935,1.332-30.86a1.385,1.385,0,0,1,.684-.848c1.12-.518,4.633-.72,12.529-.72l4.96.009,5.063-.009c9.716,0,11.963.284,12.709.81.609.43,1.09.769,1.587,30.129.2,11.864.373,28.834.3,29.286C164.225,428.711,164.183,428.956,156.556,428.956Zm-6.522-2.179c1.012.1,3.41.179,6.522.179,2.808,0,4.878-.068,5.866-.149.065-6.6-.519-52.034-1.315-56.861-1.106-.24-4.922-.375-11.318-.375l-5.063.009-4.96-.009c-6.332,0-10.156.148-11.388.44-1.087,4.536-1.486,49.888-1.246,56.762.891.061,2.733.121,5.723.121,3.072,0,5.515-.064,6.62-.138.468-4.4,2.747-27.837,3.981-40.6a1,1,0,0,1,.991-.9h0a1,1,0,0,1,.994.894C147.009,400.94,149.416,422.971,150.034,426.777Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_96" data-name="Group 96">
+                                <path
+                                  id="Path_73"
+                                  data-name="Path 73"
+                                  d="M127.8,379.557a3.85,3.85,0,0,1-1.593-.335.5.5,0,0,1,.411-.912c3.84,1.733,9.707-5.986,9.766-6.064a.5.5,0,0,1,.8.6C136.954,373.153,132.085,379.557,127.8,379.557Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_97" data-name="Group 97">
+                                <path
+                                  id="Path_74"
+                                  data-name="Path 74"
+                                  d="M161.33,379.557c-4.285,0-9.152-6.4-9.383-6.71a.5.5,0,0,1,.8-.6c.059.078,5.921,7.8,9.765,6.064a.5.5,0,0,1,.411.912A3.847,3.847,0,0,1,161.33,379.557Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_98" data-name="Group 98">
+                                <rect
+                                  id="Rectangle_14"
+                                  data-name="Rectangle 14"
+                                  width="1"
+                                  height="17.748"
+                                  transform="translate(143.62 368.504) rotate(-0.738)"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_99" data-name="Group 99">
+                                <path
+                                  id="Path_75"
+                                  data-name="Path 75"
+                                  d="M146.781,370.627a.807.807,0,0,1-.808.806h0a.8.8,0,0,1-.8-.806h0a.8.8,0,0,1,.8-.8h0a.806.806,0,0,1,.808.8Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_100" data-name="Group 100">
+                                <rect
+                                  id="Rectangle_15"
+                                  data-name="Rectangle 15"
+                                  width="34.947"
+                                  height="1"
+                                  transform="translate(127.091 371.744)"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_101" data-name="Group 101">
+                                <path
+                                  id="Path_76"
+                                  data-name="Path 76"
+                                  d="M133.414,372.744a.5.5,0,0,1-.5-.5v-3.121a.5.5,0,0,1,1,0v3.121A.5.5,0,0,1,133.414,372.744Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                              <g id="Group_102" data-name="Group 102">
+                                <path
+                                  id="Path_77"
+                                  data-name="Path 77"
+                                  d="M155.039,372.744a.5.5,0,0,1-.5-.5v-3.121a.5.5,0,0,1,1,0v3.121A.5.5,0,0,1,155.039,372.744Z"
+                                  fill="#231f20"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="wrapper__label-container">
+                          <h2 class="wrapper-card-title">BOTTOMS</h2>
+                          <ul class="wrapper-card-listings">
+                            <li>Listings</li>
+                            <li>21.308</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="wrapper__items-listed">
+                      <a href="#" class="wrapper__links">
+                        <div class="wrapper__svg">
+                          <svg
+                            fill="#000000"
+                            height="64px"
+                            width="64px"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 512 512"
+                            xml:space="preserve"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                              id="SVGRepo_tracerCarrier"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <g>
+                                <g>
+                                  <path
+                                    d="M97.174,195.039c-28.807,0-52.244,23.437-52.244,52.245c0,28.808,23.437,52.245,52.244,52.245 c28.808,0,52.246-23.437,52.246-52.245C149.42,218.476,125.982,195.039,97.174,195.039z M97.174,278.631 c-17.285,0-31.346-14.062-31.346-31.347c0-17.285,14.061-31.347,31.346-31.347c17.286,0,31.348,14.062,31.348,31.347 C128.522,264.569,114.46,278.631,97.174,278.631z"
+                                  ></path>
+                                </g>
+                              </g>
+                              <g>
+                                <g>
+                                  <path
+                                    d="M486.633,285.446c-15.381-11.405-35.923-16.252-61.93-22.389c-5.661-1.335-11.516-2.717-17.609-4.237 c-0.001,0-0.003-0.001-0.004-0.001c-35.362-8.827-65.669-19.06-91.131-30.842c1.095-5.039-1.672-10.233-6.655-12.032 c-4.173-1.508-8.671-0.186-11.421,2.97c-7.685-4.187-14.832-8.552-21.456-13.098c1.375-4.471-0.385-9.471-4.569-12.002 c-3.514-2.13-7.78-1.93-11.029,0.141c-6.066-5.13-11.553-10.469-16.463-16.022c2.32-4.102,1.642-9.4-1.952-12.762 c-2.704-2.53-6.392-3.336-9.731-2.485c-4.314-6.566-7.941-13.403-10.883-20.521c2.922-2.695,4.174-6.94,2.845-10.959 c-1.317-3.982-4.798-6.628-8.703-7.089c-1.958-8.093-3.16-16.508-3.602-25.267c-0.281-5.559-4.869-9.922-10.435-9.922H10.449 C4.678,88.929,0,93.608,0,99.378v313.245c0,5.77,4.678,10.449,10.449,10.449h491.102c5.77,0,10.449-4.679,10.449-10.449v-65.482 C512,317.884,503.939,298.279,486.633,285.446z M406.035,280.082c4.774,1.168,9.384,2.257,13.869,3.315 c44.992,10.615,67.476,15.919,70.772,53.295H377.245c0.517-6.263,1.502-12.207,2.96-17.745 C386.566,294.777,400.149,283.83,406.035,280.082z M20.898,109.827h171.376c0.762,6.802,1.96,13.432,3.575,19.896l-9.018,2.981 c-2.561-1.633-5.593-2.592-8.849-2.592c-9.11,0-16.523,7.412-16.523,16.523c0,9.112,7.412,16.524,16.523,16.524 c7.027,0,13.027-4.417,15.411-10.614l8.968-2.964c3.912,9.516,8.856,18.61,14.821,27.268l-5.708,6.101 c-0.366-0.024-0.728-0.056-1.1-0.056c-9.11,0-16.523,7.413-16.523,16.524s7.412,16.523,16.523,16.523s16.523-7.412,16.523-16.523 c0-0.745-0.067-1.472-0.162-2.192l3.575-3.82c5.642,6.237,11.89,12.212,18.744,17.916l-5.889,9.729 c-8.012,1.136-14.2,8.021-14.2,16.341c0,9.112,7.413,16.524,16.523,16.524s16.523-7.413,16.523-16.524 c0-1.937-0.353-3.79-0.969-5.519l4.803-7.935c7.47,5.082,15.53,9.939,24.206,14.578l-4.446,12.314 c-6.417,2.271-11.034,8.381-11.034,15.566c0,9.112,7.412,16.523,16.523,16.523s16.523-7.413,16.523-16.523 c0-3.096-0.871-5.984-2.358-8.464l3.65-10.108c21.006,9.574,45.09,18.148,72.568,25.839c-7.99,8.46-16.557,21.268-21.48,39.965 c-1.903,7.231-3.146,14.956-3.717,23.066l-335.382-0.002V109.827z M491.102,402.174H20.898v-44.584h470.204V402.174z"
+                                  ></path>
+                                </g>
+                              </g>
+                              <g>
+                                <g>
+                                  <path
+                                    d="M195.353,368.817h-4.678c-5.77,0-10.449,4.678-10.449,10.449c0,5.77,4.679,10.449,10.449,10.449h4.678 c5.77,0,10.449-4.679,10.449-10.449C205.802,373.495,201.123,368.817,195.353,368.817z"
+                                  ></path>
+                                </g>
+                              </g>
+                              <g>
+                                <g>
+                                  <path
+                                    d="M156.872,368.817H55.38c-5.77,0-10.449,4.678-10.449,10.449c0,5.77,4.679,10.449,10.449,10.449h101.492 c5.77,0,10.449-4.679,10.449-10.449C167.321,373.495,162.642,368.817,156.872,368.817z"
+                                  ></path>
+                                </g>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="wrapper__label-container">
+                          <h2 class="wrapper-card-title">FOOTWEAR</h2>
+                          <ul class="wrapper-card-listings">
+                            <li>Listings</li>
+                            <li>7.639</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="wrapper__items-listed">
+                      <a href="#" class="wrapper__links">
+                        <div class="wrapper__svg">
+                          <svg
+                            fill="#000000"
+                            height="64"
+                            width="64"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 512 512"
+                            xml:space="preserve"
+                          >
+                            <g transform="translate(0 1)">
+                              <g>
+                                <path
+                                  d="M366.824,192.844c-0.904-10.369-7.574-18.652-16.957-21.801V7.533c0-5.12-3.413-8.533-8.533-8.533H307.2
+                             c-5.12,0-8.533,3.413-8.533,8.533v163.509c-9.619,3.228-16.387,11.853-17.014,22.59c-21.299,6.951-41.318,19.7-57.023,36.347
+                             c-2.916-3.538-6.795-6.226-11.296-7.737V7.533c0-5.12-3.413-8.533-8.533-8.533h-34.133c-5.12,0-8.533,3.413-8.533,8.533v214.709
+                             c-9.62,3.228-16.388,11.854-17.014,22.591C89.433,262.922,51.2,315.108,51.2,374.467C51.2,449.56,112.64,511,187.733,511
+                             c44.271,0,83.791-21.359,108.779-54.276c9.251,1.879,18.503,3.076,27.754,3.076c75.093,0,136.533-61.44,136.533-136.533
+                             C460.8,263.888,422.541,211.686,366.824,192.844z M265.703,262.019c6.593-6.171,14.224-11.482,22.321-15.373
+                             c4.631,5.176,11.414,8.354,19.176,8.354h34.133c7.62,0,14.705-3.458,19.482-9.033c29.531,14.355,48.785,44.713,48.785,77.3
+                             c0,46.933-38.4,85.333-85.333,85.333c-1.366,0-2.827-0.003-4.341-0.031c2.832-10.91,4.341-22.338,4.341-34.102
+                             C324.267,328.743,301.577,287.277,265.703,262.019z M315.733,16.067H332.8v153.6h-17.067V16.067z M298.667,195.267
+                             c0-5.12,3.413-8.533,8.533-8.533h34.133c5.12,0,8.533,3.413,8.533,8.533v4.267v29.013c0,1.707-0.853,2.56-0.853,3.413
+                             c-0.278,0.833-0.456,1.663-0.552,2.467c-1.458,2.201-3.966,3.506-7.128,3.506H307.2c-3.2,0-5.734-1.334-7.184-3.584
+                             c-0.106-0.561-0.268-1.08-0.496-1.536c-0.505-1.01-0.708-1.718-0.792-2.307c-0.037-0.36-0.061-0.727-0.061-1.107v-29.013V195.267z
+                              M280.747,210.627v17.92v0.853c-11.83,5.915-21.984,13.509-31.296,22.772c-5.152-2.657-10.505-5.009-16.039-7.028
+                             C246.972,230.851,263.022,219.067,280.747,210.627z M271.429,391.028c-20.151-16.092-32.496-40.849-32.496-66.908
+                             c0-5.312,0.663-10.955,1.779-16.517c20.037,16.167,32.354,40.802,32.354,66.864C273.067,380.13,272.495,385.666,271.429,391.028z
+                              M170.667,306.2h18.209c-0.756,6.183-1.142,12.242-1.142,17.92c0,44.167,22.609,86.133,59.045,111.778
+                             c-15.36,14.773-36.182,23.902-59.045,23.902c-46.933,0-85.333-38.4-85.333-85.333c0-32.67,19.349-63.102,49.008-76.717
+                             C156.041,302.982,162.857,306.2,170.667,306.2z M225.28,297.667c-2.56,8.533-3.413,17.067-3.413,25.6
+                             c0,33.28,17.067,64.853,44.373,83.627c-2.56,5.973-5.12,10.24-8.533,15.36c-32.427-21.333-52.907-58.88-52.907-98.987
+                             c0-5.973,0-11.093,0.853-17.067c5.41,0,9.971-1.7,13.986-4.79c1.71-1.219,3.272-2.643,4.643-4.243
+                             c0.093,0.045,0.185,0.093,0.278,0.139C224.8,297.667,225.28,297.667,225.28,297.667z M179.2,16.067h17.067v204.8H179.2V16.067z
+                              M162.133,246.467c0-5.12,3.413-8.533,8.533-8.533H204.8c5.12,0,8.533,3.413,8.533,8.533v4.267v29.013
+                             c0,1.707-0.853,2.56-0.853,3.413c-0.322,0.965-0.643,1.929-0.827,2.848c-1.488,1.968-3.879,3.125-6.853,3.125h-34.133
+                             c-3.2,0-5.734-1.334-7.184-3.584c-0.106-0.561-0.268-1.08-0.496-1.536c-0.505-1.01-0.708-1.718-0.792-2.307
+                             c-0.037-0.36-0.061-0.727-0.061-1.106v-29.013V246.467z M187.733,493.933c-65.707,0-119.467-53.76-119.467-119.467
+                             c0-49.493,30.72-93.867,76.8-111.787v17.92v0v0.853c-35.84,16.213-59.733,52.907-59.733,93.013c0,56.32,46.08,102.4,102.4,102.4
+                             c31.167,0,59.193-14.117,78.014-36.266c0.194-0.154,0.367-0.301,0.492-0.427c1.127-1.378,2.206-2.803,3.26-4.251
+                             c12.939-17.147,20.633-38.446,20.633-61.456c0-40.107-23.893-76.8-59.733-93.013V280.6v-17.803
+                             c6.024,2.329,11.714,5.204,17.067,8.416c0.562,0.281,1.028,0.463,1.466,0.589c35.593,21.438,58.268,60.154,58.268,102.664
+                             c0,13.279-2.198,26.068-6.244,38.026c-0.21,0.385-0.408,0.789-0.583,1.227c-1.207,3.622-2.637,7.239-4.234,10.786
+                             C277.118,465.4,235.599,493.933,187.733,493.933z M324.267,442.733c-5.828,0-11.656-0.813-17.484-1.645
+                             c2.924-5.19,5.522-10.586,7.759-16.162c3.242,0.731,6.484,0.74,9.725,0.74c56.32,0,102.4-46.08,102.4-102.4
+                             c0-40.107-23.893-76.8-59.733-93.013V229.4v-17.92c46.08,17.92,76.8,62.293,76.8,111.787
+                             C443.733,388.973,389.973,442.733,324.267,442.733z"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="wrapper__label-container">
+                          <h2 class="wrapper-card-title">Accesories</h2>
+                          <ul class="wrapper-card-listings">
+                            <li>Listings</li>
+                            <li>1.789</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="img__wrapper-right">
+                <p>
+                  A good quality item is never too expensive. You'll get more
+                  for your money.
+                </p>
+                <button class="main__button">Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="filter__header-nav">
+        <ul class="filter__header-nav-items">
+          <li class="filter__header-nav-listed-items">
+            <button class="filter__button" id="filter-toggle">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-sliders"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"
+                  />
+                </svg>
+              </span>
+              <span class="filter__button-label">All filters</span>
+            </button>
+          </li>
+          <li class="filter__header-nav-listed-items">
+            <button
+              class="filter__button filter__button-label"
+              id="filter-toggle"
+            >
+              Size
+            </button>
+          </li>
+          <li class="filter__header-nav-listed-items">
+            <button
+              class="filter__button filter__button-label"
+              id="filter-toggle"
+            >
+              Designer
+            </button>
+          </li>
+          <li class="filter__header-nav-listed-items">
+            <button
+              class="filter__button filter__button-label"
+              id="filter-toggle"
+            >
+              Price
+            </button>
+          </li>
+          <li class="filter__header-nav-listed-items">
+            <button class="filter__button">
+              <span class="filter__button-label">Sort By</span>
+              <span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="container carousel__container">
+        <div class="left">
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img4"></div>
+            <div class="card__header-item">
+              <h3>Levi's</h3>
+              <p class="card__subtitle">7 hour ago <span>·</span> $87</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img5"></div>
+            <div class="card__header-item">
+              <h3>Prada</h3>
+              <p class="card__subtitle">20 days ago <span>·</span> $3500</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img7"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img8"></div>
+            <div class="card__header-item">
+              <h3>Jewelry</h3>
+              <p class="card__subtitle">1 week ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img4"></div>
+            <div class="card__header-item">
+              <h3>Levi's</h3>
+              <p class="card__subtitle">7 hour ago <span>·</span> $87</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img5"></div>
+            <div class="card__header-item">
+              <h3>Prada</h3>
+              <p class="card__subtitle">20 days ago <span>·</span> $3500</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img7"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <hr class="border__store" />
+        </div>
+        <div class="right">
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img8"></div>
+            <div class="card__header-item">
+              <h3>Jewelry</h3>
+              <p class="card__subtitle">1 week ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img12"></div>
+            <div class="card__header-item">
+              <h3>Denim Jacket</h3>
+              <p class="card__subtitle">28 minutes ago <span>·</span> $74</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img9"></div>
+            <div class="card__header-item">
+              <h3>Kurt Cobain</h3>
+              <p class="card__subtitle">12 minutes ago <span>·</span> $34</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img3"></div>
+            <div class="card__header-item">
+              <h3>Kintted Vest</h3>
+              <p class="card__subtitle">2 hour ago <span>·</span> $129</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img11"></div>
+            <div class="card__header-item">
+              <h3>Tote Bag</h3>
+              <p class="card__subtitle">7 hour ago <span>·</span> $28</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img7"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img8"></div>
+            <div class="card__header-item">
+              <h3>Jewelry</h3>
+              <p class="card__subtitle">1 week ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img12"></div>
+            <div class="card__header-item">
+              <h3>Denim Jacket</h3>
+              <p class="card__subtitle">28 minutes ago <span>·</span> $74</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img8"></div>
+            <div class="card__header-item">
+              <h3>Jewelry</h3>
+              <p class="card__subtitle">1 week ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <hr class="border__store" />
+        </div>
+        <div class="left far__right">
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img4"></div>
+            <div class="card__header-item">
+              <h3>Levi's</h3>
+              <p class="card__subtitle">7 hour ago <span>·</span> $87</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img5"></div>
+            <div class="card__header-item">
+              <h3>Prada</h3>
+              <p class="card__subtitle">20 days ago <span>·</span> $3500</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img7"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img6"></div>
+            <div class="card__header-item">
+              <h3>Vintage Puffer</h3>
+              <p class="card__subtitle">40 minutes ago <span>·</span> $180</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img8"></div>
+            <div class="card__header-item">
+              <h3>Jewelry</h3>
+              <p class="card__subtitle">1 week ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Vintage Hoodie</h3>
+              <p class="card__subtitle">3 minutes ago <span>·</span> $113</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img4"></div>
+            <div class="card__header-item">
+              <h3>Levi's</h3>
+              <p class="card__subtitle">7 hour ago <span>·</span> $87</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img5"></div>
+            <div class="card__header-item">
+              <h3>Prada</h3>
+              <p class="card__subtitle">20 days ago <span>·</span> $3500</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img7"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img"></div>
+            <div class="card__header-item">
+              <h3>Hysteric Glamour</h3>
+              <p class="card__subtitle">14 hour ago <span>·</span> $120</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img2"></div>
+            <div class="card__header-item">
+              <h3>Tommy Bahama</h3>
+              <p class="card__subtitle">1 hour ago <span>·</span> $32</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__header card__img10"></div>
+            <div class="card__header-item">
+              <h3>Ski Mask</h3>
+              <p class="card__subtitle">2 day ago <span>·</span> $38</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer__left">
+          <div class="footer__container-h3">
+            <h3>We have high standars for our emails too.</h3>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer__container-h3 footer__container-h3-rsp">
+            <h3>We have high standars for our emails too.</h3>
+          </div>
+          <form class="form__container" style="position: relative" action="#">
+            <input
+              type="email"
+              class="footer__input"
+              placeholder="Enter your email"
+            />
+            <button class="main__button" type="submit">Subscribe</button>
+          </form>
+          <div class="footer__contact input__contact">
+            <ul class="footer__social">
+              <li>
+                <a href="#" class="footer__links flex"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-facebook"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__links flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__links flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-twitter"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__links flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-youtube"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__links flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-pinterest"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__bottom-container">
+            <p class="footer__bottom-left">
+              From Arian with care © 2023 ThriftOnline
+            </p>
+            <p class="footer__bottom-right">
+              Terms and conditions / Privacy Policy
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
