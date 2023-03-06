@@ -184,9 +184,6 @@ body::-webkit-scrollbar {
   transform: scale(1);
   display: block;
 }
-#nav-toggle:checked ~ label #nav-toggle-btn:hover > #cancel-nav {
-  transform: rotate(90deg);
-}
 #cancel-nav {
   display: none;
 }
@@ -645,8 +642,10 @@ input::-webkit-inner-spin-button {
   font-family: "Times New Roman", Times, serif;
   cursor: pointer;
 }
-.filter-btn:hover > span > svg {
+.filter-btn:hover > span > svg > path {
   transform: rotate(90deg);
+  transform-origin: center;
+  transition: transform 350ms;
 }
 .filter__button-label {
   position: relative;
@@ -933,73 +932,73 @@ body:has(.fileter__wrapper[aria-expanded="true"]) .filter__header-nav {
 }
 .card__img {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed2.jpg);
+    url(/img/feed2.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img2 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed1.jpg);
+    url(/img/feed1.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img3 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed3.jpg);
+    url(/img/feed3.jpg);
   background-size: cover;
   background-position: top center;
 }
 .card__img4 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed4.jpg);
+    url(/img/feed4.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img5 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed5.jpg);
+    url(/img/feed5.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img6 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed6.jpg);
+    url(/img/feed6.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img7 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed7.jpg);
+    url(/img/feed7.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img8 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed8.jpg);
+    url(/img/feed8.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img9 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed9.jpg);
+    url(/img/feed9.jpg);
   background-size: cover;
   background-position: top center;
 }
 .card__img10 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed10.jpg);
+    url(/img/feed10.jpg);
   background-size: cover;
   background-position: top center;
 }
 .card__img11 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed11.jpg);
+    url(/img/feed11.jpg);
   background-size: cover;
   background-position: top center;
 }
 .card__img12 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
-    url(feed12.jpg);
+    url(/img/feed12.jpg);
   background-size: cover;
   background-position: top center;
 }
