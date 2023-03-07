@@ -322,7 +322,7 @@ i {
   height: 101svh;
 }
 .header__img-container {
-  background-image: url(signup-hero.jpg);
+  background-image: url(/img/signup-hero.jpg);
   background-size: cover;
   background-position: center;
   flex: 50%;

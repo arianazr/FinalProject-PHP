@@ -451,19 +451,19 @@ i {
   background-size: cover;
 }
 .image {
-  background-image: url(feed7.jpg);
+  background-image: url(/img/feed7.jpg);
 }
 .image2 {
-  background-image: url(feed11.jpg);
+  background-image: url(/img/feed11.jpg);
 }
 .image3 {
-  background-image: url(aboutfeed2.jpg);
+  background-image: url(/img/aboutfeed2.jpg);
 }
 .image4 {
-  background-image: url(aboutfeed.jpg);
+  background-image: url(/img/aboutfeed.jpg);
 }
 .image5 {
-  background-image: url(aboutfeed3.jpg);
+  background-image: url(/img/aboutfeed3.jpg);
 }
 
 .image-with-text__img {
@@ -501,7 +501,7 @@ i {
   }
 }
 .commission__fee-bg {
-  background: url(about-hero2.jpg);
+  background: url(/img/about-hero2.jpg);
   background-size: cover;
   background-position: center;
   margin: 1rem;
@@ -567,7 +567,7 @@ i {
   }
 }
 .be-social__container-bg {
-  background-image: url(about-hero3.jpg);
+  background-image: url(/img/about-hero3.jpg);
   background-size: cover;
   background-position: center;
   margin: 1rem;
@@ -602,13 +602,12 @@ i {
   }
 }
 .be-social__container-bg2 {
-  background-image: url(about-hero4.jpg);
+  background-image: url(/img/about-hero4.jpg);
 }
 
 /* FOOTER STYLE  */
 footer {
   margin-top: 9rem;
-  background-color: var(--color-offwhite);
   display: flex;
   align-items: baseline;
   padding: 1.55rem 5rem 7rem;
