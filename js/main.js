@@ -22,16 +22,16 @@ nav.addEventListener("touchmove", (e) => {
   navTransform(e.touches[0].clientX, nav);
 });
 
-nav.addEventListener("mouseleave", (e) => {
+nav.addEventListener("mouseleave", () => {
   nav.style.transform = "translateX(0px)";
 });
 
 function navTransform(x, nav) {
-  // find the middle
+  // find the left edge
 
   const middleX = window.innerWidth / 10;
 
-  // get offset from the middle
+  // get offset from the left edge
 
   let offsetX;
   if (window.innerWidth < 530) {
@@ -40,6 +40,7 @@ function navTransform(x, nav) {
     offsetX = ((x - middleX) / 2.386) * -1;
   }
   nav.style.transform = `translateX(${offsetX}px)`;
+  console.log(x);
 }
 
 // FILTER HEIGHT
@@ -74,3 +75,6 @@ filterBtns.forEach((filterBtn) => {
     }
   });
 });
+var number1 = 1;
+var number2 = 15;
+console.log(number1 + number2);

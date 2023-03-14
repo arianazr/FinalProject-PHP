@@ -83,6 +83,307 @@
         </div>
       </div>
     </nav>
+    <aside class="fileter__section">
+      <div aria-expanded="false" id="filter-wrp" class="fileter__wrapper">
+        <div class="filter__container">
+          <div
+            style="width: 100%; display: flex; justify-content: center"
+            class="filter-cancel__button-container"
+          >
+            <button
+              style="margin-top: 1.3125rem"
+              class="filter__button filter-btn"
+              id="filter-toggle"
+            >
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  />
+                </svg>
+              </span>
+              <span class="filter__button-label">Close filters</span>
+            </button>
+          </div>
+          <ul class="filter__list">
+            <li class="filter__listed-items">
+              <input type="checkbox" class="filter__check" id="filter-check" />
+              <label class="labels" id="button-height-toggle" for="filter-check"
+                ><p class="title__sizes">Size</p>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  id="caret-down"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </label>
+              <div class="size__filter" style="height: 0px">
+                <p class="size__title">Pick Your Size</p>
+                <ul class="sizes__list">
+                  <li>
+                    <input type="checkbox" name="XXS" id="XXS" />
+                    <label for="XXS">XXS/40</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="XS" id="XS" />
+                    <label for="XS">XS/42</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="S" id="S" />
+                    <label for="S">S/44-46</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="M" id="M" />
+                    <label for="M">M/48-50</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="L" id="L" />
+                    <label for="L">L/52-54</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="XL" id="XL" />
+                    <label for="XL">XL/56</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="XXL" id="XXL" />
+                    <label for="XXL">XXL/58</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filter__listed-items">
+              <input type="checkbox" class="filter__check" id="filter-check2" />
+              <label
+                id="button-height-toggle"
+                class="labels"
+                for="filter-check2"
+                ><p class="title__sizes">Designer</p>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  id="caret-down"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </label>
+              <div class="size__filter" style="height: 0px">
+                <div class="form__container-searchbar">
+                  <form action="#" class="searchbar__container">
+                    <i
+                      class="fa-solid fa-magnifying-glass"
+                      id="searchbar-icon"
+                    ></i>
+                    <input
+                      type="text"
+                      name="searchbar"
+                      id="searchbar"
+                      class="searchbar"
+                      placeholder="Search Desginers"
+                    />
+                  </form>
+                </div>
+                <ul class="sizes__list">
+                  <li>
+                    <input type="checkbox" id="Vintage" />
+                    <label for="Vintage">Vintage</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="Streetwear" />
+                    <label for="Streetwear">Streetwear</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="JapaneseBrand" />
+                    <label for="JapaneseBrand">Japanese Brand</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="BandTees" />
+                    <label for="BandTees">Band Tees</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="BandTees" />
+                    <label for="BandTees">Band Tees</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="nike" />
+                    <label for="nike">Nike</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="Supreme" />
+                    <label for="Supreme">Supreme</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="Adidas" />
+                    <label for="Adidas">Adidas</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filter__listed-items">
+              <input type="checkbox" class="filter__check" id="filter-check3" />
+              <label
+                id="button-height-toggle"
+                class="labels"
+                for="filter-check3"
+                ><p class="title__sizes">Price</p>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  id="caret-down"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </label>
+              <div class="size__filter" style="height: 0px">
+                <div class="prices__container">
+                  <div class="min" style="position: relative">
+                    <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
+                    <input
+                      type="number"
+                      name="min"
+                      id="min"
+                      placeholder="MIN"
+                      class="price__selector"
+                    />
+                  </div>
+                  <div class="max" style="position: relative">
+                    <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
+                    <input
+                      type="number"
+                      name="max"
+                      id="max"
+                      placeholder="MAX"
+                      class="price__selector"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="filter__listed-items">
+              <input type="checkbox" class="filter__check" id="filter-check4" />
+              <label
+                id="button-height-toggle"
+                class="labels"
+                for="filter-check4"
+              >
+                <p class="title__sizes">Condition</p>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  id="caret-down"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </label>
+              <div class="size__filter" style="height: 0px">
+                <ul class="sizes__list">
+                  <li>
+                    <input type="checkbox" name="new" id="new" />
+                    <label for="new">New/Never Worn</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="gentle" id="gentle" />
+                    <label for="gentle">Gently Used</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="used" id="used" />
+                    <label for="used">Used</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="very" id="very" />
+                    <label for="very">Very Worn</label>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      name="notspecified"
+                      id="notspecified"
+                    />
+                    <label for="notspecified">Not Specified</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="filter__listed-items">
+              <input type="checkbox" class="filter__check" id="filter-check5" />
+              <label
+                id="button-height-toggle"
+                class="labels"
+                for="filter-check5"
+              >
+                <p class="title__sizes">Filter By Keyword</p>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  id="caret-down"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </label>
+              <div class="size__filter" style="height: 0px">
+                <div class="form__container-searchbar">
+                  <form action="#" class="searchbar__container">
+                    <i
+                      class="fa-solid fa-magnifying-glass"
+                      id="searchbar-icon"
+                    ></i>
+                    <input
+                      type="text"
+                      name="searchbar"
+                      id="searchbar"
+                      class="searchbar"
+                      placeholder="Filter by keyword"
+                    />
+                  </form>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
     <main style="position: relative">
       <header>
         <h1 class="page-logo">To.</h1>
@@ -90,330 +391,7 @@
           THRIFTONLINE <br /><span>Most reliable online shop.</span>
         </h1>
       </header>
-      <aside class="fileter__section">
-        <div aria-expanded="false" id="filter-wrp" class="fileter__wrapper">
-          <div class="filter__container">
-            <div
-              style="width: 100%; display: flex; justify-content: center"
-              class="filter-cancel__button-container"
-            >
-              <button
-                style="margin-top: 1.3125rem"
-                class="filter__button filter-btn"
-                id="filter-toggle"
-              >
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="currentColor"
-                    class="bi bi-x-lg"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                    />
-                  </svg>
-                </span>
-                <span class="filter__button-label">Close filters</span>
-              </button>
-            </div>
-            <ul class="filter__list">
-              <li class="filter__listed-items">
-                <input
-                  type="checkbox"
-                  class="filter__check"
-                  id="filter-check"
-                />
-                <label
-                  class="labels"
-                  id="button-height-toggle"
-                  for="filter-check"
-                  ><p class="title__sizes">Size</p>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    id="caret-down"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </label>
-                <div class="size__filter" style="height: 0px">
-                  <p class="size__title">Pick Your Size</p>
-                  <ul class="sizes__list">
-                    <li>
-                      <input type="checkbox" name="XXS" id="XXS" />
-                      <label for="XXS">XXS/40</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="XS" id="XS" />
-                      <label for="XS">XS/42</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="S" id="S" />
-                      <label for="S">S/44-46</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="M" id="M" />
-                      <label for="M">M/48-50</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="L" id="L" />
-                      <label for="L">L/52-54</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="XL" id="XL" />
-                      <label for="XL">XL/56</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="XXL" id="XXL" />
-                      <label for="XXL">XXL/58</label>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="filter__listed-items">
-                <input
-                  type="checkbox"
-                  class="filter__check"
-                  id="filter-check2"
-                />
-                <label
-                  id="button-height-toggle"
-                  class="labels"
-                  for="filter-check2"
-                  ><p class="title__sizes">Designer</p>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    id="caret-down"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </label>
-                <div class="size__filter" style="height: 0px">
-                  <div class="form__container-searchbar">
-                    <form action="#" class="searchbar__container">
-                      <i
-                        class="fa-solid fa-magnifying-glass"
-                        id="searchbar-icon"
-                      ></i>
-                      <input
-                        type="text"
-                        name="searchbar"
-                        id="searchbar"
-                        class="searchbar"
-                        placeholder="Search Desginers"
-                      />
-                    </form>
-                  </div>
-                  <ul class="sizes__list">
-                    <li>
-                      <input type="checkbox" id="Vintage" />
-                      <label for="Vintage">Vintage</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="Streetwear" />
-                      <label for="Streetwear">Streetwear</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="JapaneseBrand" />
-                      <label for="JapaneseBrand">Japanese Brand</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="BandTees" />
-                      <label for="BandTees">Band Tees</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="BandTees" />
-                      <label for="BandTees">Band Tees</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="nike" />
-                      <label for="nike">Nike</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="Supreme" />
-                      <label for="Supreme">Supreme</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="Adidas" />
-                      <label for="Adidas">Adidas</label>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="filter__listed-items">
-                <input
-                  type="checkbox"
-                  class="filter__check"
-                  id="filter-check3"
-                />
-                <label
-                  id="button-height-toggle"
-                  class="labels"
-                  for="filter-check3"
-                  ><p class="title__sizes">Price</p>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    id="caret-down"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </label>
-                <div class="size__filter" style="height: 0px">
-                  <div class="prices__container">
-                    <div class="min" style="position: relative">
-                      <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
-                      <input
-                        type="number"
-                        name="min"
-                        id="min"
-                        placeholder="MIN"
-                        class="price__selector"
-                      />
-                    </div>
-                    <div class="max" style="position: relative">
-                      <i class="fa-solid fa-dollar-sign" id="dollar-sign"></i>
-                      <input
-                        type="number"
-                        name="max"
-                        id="max"
-                        placeholder="MAX"
-                        class="price__selector"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="filter__listed-items">
-                <input
-                  type="checkbox"
-                  class="filter__check"
-                  id="filter-check4"
-                />
-                <label
-                  id="button-height-toggle"
-                  class="labels"
-                  for="filter-check4"
-                >
-                  <p class="title__sizes">Condition</p>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    id="caret-down"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </label>
-                <div class="size__filter" style="height: 0px">
-                  <ul class="sizes__list">
-                    <li>
-                      <input type="checkbox" name="new" id="new" />
-                      <label for="new">New/Never Worn</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="gentle" id="gentle" />
-                      <label for="gentle">Gently Used</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="used" id="used" />
-                      <label for="used">Used</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="very" id="very" />
-                      <label for="very">Very Worn</label>
-                    </li>
-                    <li>
-                      <input
-                        type="checkbox"
-                        name="notspecified"
-                        id="notspecified"
-                      />
-                      <label for="notspecified">Not Specified</label>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="filter__listed-items">
-                <input
-                  type="checkbox"
-                  class="filter__check"
-                  id="filter-check5"
-                />
-                <label
-                  id="button-height-toggle"
-                  class="labels"
-                  for="filter-check5"
-                >
-                  <p class="title__sizes">Filter By Keyword</p>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    id="caret-down"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.1416 9.92896L12.7776 16.2929C12.3871 16.6834 11.7539 16.6834 11.3634 16.2929L4.99946 9.92895"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </label>
-                <div class="size__filter" style="height: 0px">
-                  <div class="form__container-searchbar">
-                    <form action="#" class="searchbar__container">
-                      <i
-                        class="fa-solid fa-magnifying-glass"
-                        id="searchbar-icon"
-                      ></i>
-                      <input
-                        type="text"
-                        name="searchbar"
-                        id="searchbar"
-                        class="searchbar"
-                        placeholder="Filter by keyword"
-                      />
-                    </form>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </aside>
+
       <section class="row nav__Row">
         <div class="main-bg">
           <div id="main-height" class="main">
