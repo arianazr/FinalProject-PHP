@@ -121,17 +121,34 @@ header {
     opacity: 1;
   }
 }
+@keyframes menu-popup {
+  0% {
+    transform: translate(-20px, 30px) scale(0.85) rotate(-20deg);
+  }
+  25% {
+    transform: translate(45px, 46px) rotate(55deg);
+  }
+  50% {
+    transform: translate(45px, 46px) rotate(55deg);
+  }
+  75% {
+    transform: translate(45px, 46px) rotate(55deg);
+  }
+  100% {
+    transform: translate(15px, 78px) rotate(96deg);
+  }
+}
 #nav-toggle-btn {
-  height: 4rem;
-  width: 4rem;
+  width: 6rem;
+  aspect-ratio: 1;
   position: fixed;
   z-index: 500;
   left: 50%;
-  bottom: 3rem;
+  bottom: 2rem;
   transform: translateX(-50%);
   background-color: var(--color-orange);
   border: none;
-  border-radius: 5rem;
+  border-radius: 100vw;
   outline: none;
   box-shadow: 0rem 0rem 4rem rgb(0 0 0 / 35%);
   cursor: pointer;
@@ -148,42 +165,59 @@ header {
 #nav-toggle-btn:active {
   transform: translateX(-50%) scale(0.96);
 }
-#hamburger {
-  font-size: 1.75rem;
-  transform: scale(0.9);
-  color: rgb(246, 231, 224);
-  opacity: 0;
-  transition: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 400ms;
+text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: -0.12em;
+  color: rgba(0, 0, 0, 0.8);
+  mix-blend-mode: difference;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.menu__label {
+  position: absolute;
+  z-index: 400;
+  right: 0;
+  top: -1.5em;
+  transform: translate(-20px, 30px) scale(0.85) rotate(-20deg);
+  transition: transform 350ms;
+  transform-origin: 50% 50%;
+  animation: menu-popup 3350ms ease 1s infinite;
+}
+#nav-toggle-btn:hover .menu__label {
+  transform: translate(45px, 46px) rotate(55deg);
+  animation: none;
+}
+body:has(.nav__wrapper[aria-expanded="true"]) .menu__label {
+  color: rgba(250, 250, 250, 0.75);
+  animation: none;
+  transform: translate(45px, 46px) rotate(55deg);
+}
+.menu__label > span {
+  display: inline-block;
+}
+.label-letter {
   position: relative;
+  transform: rotate(3.75deg);
 }
-#cancel-nav {
-  font-size: 2rem;
-  transform: scale(0.9);
-  color: rgb(246, 231, 224);
-  opacity: 0;
-  transition: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 400ms;
+.label-letter1 {
+  position: relative;
+  top: 1px;
+  transform: rotate(17.5deg);
 }
-#nav-toggle-btn:hover #hamburger {
-  opacity: 1;
-  transform: scale(1);
+.label-letter2 {
+  position: relative;
+  top: 7px;
+  transform: rotate(32.25deg);
 }
-#nav-toggle:checked ~ label #nav-toggle-btn {
+.label-letter3 {
+  position: relative;
+  left: -2px;
+  top: 16px;
+  transform: rotate(38deg);
+}
+body:has(.nav__wrapper[aria-expanded="true"]) #nav-toggle-btn {
   background-color: var(--color-blue);
-}
-#nav-toggle:checked ~ label #nav-toggle-btn > #hamburger {
-  display: none;
-}
-#nav-toggle:checked ~ label #nav-toggle-btn > #cancel-nav {
-  opacity: 1;
-  transform: scale(1);
-  display: block;
-}
-#cancel-nav {
-  display: none;
 }
 .nav__background {
   position: fixed;
@@ -192,7 +226,7 @@ header {
   z-index: 229;
   transform: translateX(100%);
 }
-#nav-toggle:checked ~ label .nav__background {
+body:has(.nav__wrapper[aria-expanded="true"]) .nav__background {
   transform: translateX(0);
   background-color: rgba(0 0 0 / 0%);
   transition: background-color 450ms ease;
@@ -201,16 +235,16 @@ header {
 main {
   transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
-body:has(#nav-toggle:checked) {
+body:has(.nav__wrapper[aria-expanded="true"]) {
   overflow: hidden;
 }
-body:has(#nav-toggle:checked) main {
+body:has(.nav__wrapper[aria-expanded="true"]) main {
   transform: translateY(-400px);
 }
-#nav-toggle:checked ~ nav {
+.nav__wrapper[aria-expanded="true"] {
   transform: translateY(0);
 }
-nav {
+.nav__wrapper {
   display: flex;
   justify-content: space-around;
   position: fixed;
@@ -241,7 +275,7 @@ nav {
   transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
 
-body:has(#nav-toggle:checked) #nav-links {
+body:has(.nav__wrapper[aria-expanded="true"]) #nav-links {
   transform: translateY(0%) scale(1);
 }
 

@@ -1,3 +1,17 @@
+//  NAV TOGGLE
+
+let navigation = document.querySelector(".nav__wrapper");
+let navToggle = document.getElementById("nav-toggle-btn");
+
+navToggle.addEventListener("click", () => {
+  const isOpened = navigation.getAttribute("aria-expanded");
+  if (isOpened === "false") {
+    navigation.setAttribute("aria-expanded", "true");
+  } else {
+    navigation.setAttribute("aria-expanded", "false");
+  }
+});
+
 // PASSWORD TOGGLE
 
 function passwordToggle() {
@@ -27,12 +41,7 @@ nav.addEventListener("mouseleave", () => {
 });
 
 function navTransform(x, nav) {
-  // find the left edge
-
   const middleX = window.innerWidth / 10;
-
-  // get offset from the left edge
-
   let offsetX;
   if (window.innerWidth < 530) {
     offsetX = ((x - middleX) / 1.8) * -1;
@@ -40,7 +49,6 @@ function navTransform(x, nav) {
     offsetX = ((x - middleX) / 2.386) * -1;
   }
   nav.style.transform = `translateX(${offsetX}px)`;
-  console.log(x);
 }
 
 // FILTER HEIGHT
@@ -75,6 +83,3 @@ filterBtns.forEach((filterBtn) => {
     }
   });
 });
-var number1 = 1;
-var number2 = 15;
-console.log(number1 + number2);
