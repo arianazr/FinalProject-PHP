@@ -1,15 +1,17 @@
 //  NAV TOGGLE
-
 let navigation = document.querySelector(".nav__wrapper");
-let navToggle = document.getElementById("nav-toggle-btn");
+let navToggles = document.querySelectorAll("#nav-toggle-btn");
 
-navToggle.addEventListener("click", () => {
-  const isOpened = navigation.getAttribute("aria-expanded");
-  if (isOpened === "false") {
-    navigation.setAttribute("aria-expanded", "true");
-  } else {
-    navigation.setAttribute("aria-expanded", "false");
-  }
+navToggles.forEach((navToggle) => {
+  navToggle.addEventListener("click", () => {
+    const isOpened = navigation.getAttribute("aria-expanded");
+
+    if (isOpened == "false") {
+      navigation.setAttribute("aria-expanded", "true");
+    } else {
+      navigation.setAttribute("aria-expanded", "false");
+    }
+  });
 });
 
 // PASSWORD TOGGLE

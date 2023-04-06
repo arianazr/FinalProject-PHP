@@ -101,7 +101,6 @@ header {
 }
 
 /* NAV BAR STYLE */
-
 #nav-links:has(#active) #active {
   transform: translateX(1rem);
   position: relative;
@@ -120,18 +119,42 @@ header {
 #nav-toggle {
   display: none;
 }
-
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes menu-popup {
+  0% {
+    transform: translate(-20px, 30px) scale(0.85) rotate(-20deg);
+  }
+  25% {
+    transform: translate(45px, 46px) scale(1) rotate(55deg);
+  }
+  50% {
+    transform: translate(45px, 46px) scale(1) rotate(55deg);
+  }
+  75% {
+    transform: translate(45px, 46px) scale(1) rotate(55deg);
+  }
+  100% {
+    transform: translate(15px, 78px) scale(0.85) rotate(96deg);
+  }
+}
 #nav-toggle-btn {
-  height: 4rem;
-  width: 4rem;
+  width: 6rem;
+  aspect-ratio: 1;
   position: fixed;
   z-index: 500;
   left: 50%;
-  bottom: 3rem;
+  bottom: 2rem;
   transform: translateX(-50%);
   background-color: var(--color-orange);
   border: none;
-  border-radius: 5rem;
+  border-radius: 100vw;
   outline: none;
   box-shadow: 0rem 0rem 4rem rgb(0 0 0 / 35%);
   cursor: pointer;
@@ -144,48 +167,106 @@ header {
 }
 #nav-toggle-btn:hover {
   transform: translateX(-50%) scale(1.04);
-  border: 1px solid rgb(250 250 250 / 20%);
 }
 #nav-toggle-btn:active {
   transform: translateX(-50%) scale(0.96);
 }
-#hamburger {
-  font-size: 1.75rem;
-  transform: scale(0.9);
-  color: rgb(246, 231, 224);
-  font-size: 1.75rem;
-  opacity: 0;
-  transition: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 400ms;
-  position: relative;
+text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: -0.12em;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  user-select: none;
+  pointer-events: none;
 }
-#cancel-nav {
-  font-size: 2rem;
-  transform: scale(0.9);
-  color: rgb(246, 231, 224);
-  opacity: 0;
-  transition: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 400ms;
+.menu__label {
+  position: absolute;
+  z-index: 400;
+  right: 0;
+  top: -1.5em;
+  mix-blend-mode: difference;
+  transform: translate(-20px, 30px) scale(0.85) rotate(-20deg);
+  transition: transform 350ms;
+  transform-origin: 50% 50%;
+  animation: menu-popup 3350ms ease 1s infinite;
 }
-#nav-toggle-btn:hover #hamburger {
-  opacity: 1;
-  transform: scale(1);
+#nav-toggle-btn:hover .menu__label {
+  transform: translate(45px, 46px) scale(1) rotate(55deg);
+  animation: none;
 }
-#nav-toggle:checked ~ label #nav-toggle-btn {
-  background-color: var(--color-blue);
-}
-#nav-toggle:checked ~ label #nav-toggle-btn > #hamburger {
+body:has(.nav__wrapper[aria-expanded="true"]) .menu__label {
   display: none;
 }
-#nav-toggle:checked ~ label #nav-toggle-btn > #cancel-nav {
-  opacity: 1;
-  transform: scale(1);
+.menu__label > span {
+  display: inline-block;
+}
+.label-letter {
+  position: relative;
+  transform: rotate(3.75deg);
+}
+.label-letter1 {
+  position: relative;
+  top: 1px;
+  transform: rotate(17.5deg);
+}
+.label-letter2 {
+  position: relative;
+  top: 7px;
+  transform: rotate(32.25deg);
+}
+.label-letter3 {
+  position: relative;
+  left: -2px;
+  top: 16px;
+  transform: rotate(38deg);
+}
+.menu__lable-close {
+  display: none;
+  position: absolute;
+  z-index: 400;
+  right: 0px;
+  top: -1.5em;
+  transform: translate(45px, 46px) rotate(55deg);
+  color: rgba(240, 240, 240, 0.8);
+}
+body:has(.nav__wrapper[aria-expanded="true"]) .menu__lable-close {
   display: block;
 }
-#cancel-nav {
-  display: none;
+.menu__lable-close > span {
+  display: inline-block;
+}
+.close-letter {
+  position: relative;
+  top: 2px;
+  left: -1px;
+  transform: rotate(3.75deg);
+}
+.close-letter1 {
+  position: relative;
+  top: 3px;
+  transform: rotate(13.5deg);
+}
+.close-letter2 {
+  position: relative;
+  top: 5px;
+  transform: rotate(20.25deg);
+}
+.close-letter3 {
+  position: relative;
+  left: -1px;
+  top: 10px;
+  transform: rotate(32deg);
+}
+.close-letter4 {
+  position: relative;
+  left: -3px;
+  top: 17px;
+  transform: rotate(43deg);
+}
+body:has(.nav__wrapper[aria-expanded="true"]) #nav-toggle-btn {
+  background-color: var(--color-blue);
 }
 .nav__background {
   position: fixed;
@@ -194,7 +275,7 @@ header {
   z-index: 229;
   transform: translateX(100%);
 }
-#nav-toggle:checked ~ label .nav__background {
+body:has(.nav__wrapper[aria-expanded="true"]) .nav__background {
   transform: translateX(0);
   background-color: rgba(0 0 0 / 0%);
   transition: background-color 450ms ease;
@@ -203,23 +284,23 @@ header {
 main {
   transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
-body:has(#nav-toggle:checked) {
+body:has(.nav__wrapper[aria-expanded="true"]) {
   overflow: hidden;
 }
-body:has(#nav-toggle:checked) main {
-  transform: translateY(-400px);
+body:has(.nav__wrapper[aria-expanded="true"]) main {
+  transform: translateY(-450px);
 }
-#nav-toggle:checked ~ nav {
+.nav__wrapper[aria-expanded="true"] {
   transform: translateY(0);
 }
-nav {
+.nav__wrapper {
   display: flex;
   justify-content: space-around;
   position: fixed;
   bottom: 0px;
   background-color: #000;
   width: 100%;
-  height: 400px;
+  height: 450px;
   z-index: 400;
   transform: translateY(100%);
   transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
@@ -231,7 +312,7 @@ nav {
   transition: transform 0.65s 0s;
 }
 #nav-links {
-  --gap: 1.55rem;
+  --gap: 1rem;
   display: flex;
   position: absolute;
   left: 0;
@@ -243,7 +324,7 @@ nav {
   transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
 
-body:has(#nav-toggle:checked) #nav-links {
+body:has(.nav__wrapper[aria-expanded="true"]) #nav-links {
   transform: translateY(0%) scale(1);
 }
 
@@ -282,8 +363,7 @@ body:has(#nav-toggle:checked) #nav-links {
   opacity: 1;
 }
 #nav-links > .nav-link > .nav-link-image {
-  width: max(20vw, 400px);
-  max-height: 221px;
+  width: 100%;
   aspect-ratio: 1.8 / 1;
   border-radius: 0.2rem;
   margin-top: 0.75rem;
@@ -291,7 +371,7 @@ body:has(#nav-toggle:checked) #nav-links {
   transition: transform 0.25s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
 #nav-links > .nav-link > .nav-link-image:hover {
-  transform: scale(1.015);
+  transform: scale(0.99);
 }
 
 @media only screen and (max-width: 1100px) {
@@ -305,9 +385,6 @@ body:has(#nav-toggle:checked) #nav-links {
 @media (max-width: 650px) {
   #nav-links > .nav-link > .nav-link-image {
     aspect-ratio: 15 / 25;
-  }
-  nav {
-    height: 370px;
   }
   #nav-toggle-btn {
     bottom: 1rem;
@@ -330,6 +407,12 @@ body:has(#nav-toggle:checked) #nav-links {
     height: 0.5em;
   }
 }
+@media (min-width: 1600px) {
+  .nav__wrapper {
+    height: 550px;
+  }
+}
+
 i {
   font-size: 25px;
 }
