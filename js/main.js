@@ -118,3 +118,5 @@ window.onmousemove = (e) => {
     );
   }
 };
+
+let footer = document.getElementsByTagName("footer");

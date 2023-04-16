@@ -405,6 +405,9 @@ body:has(.nav__wrapper[aria-expanded="true"]) #nav-links {
   .nav__wrapper {
     height: 550px;
   }
+  body:has(.nav__wrapper[aria-expanded="true"]) main {
+    transform: translateY(-550px);
+  }
 }
 i {
   font-size: 25px;
