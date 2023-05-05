@@ -119,4 +119,37 @@ window.onmousemove = (e) => {
   }
 };
 
-let footer = document.getElementsByTagName("footer");
+// footer IntersectionObserver
+
+let footers = document.querySelectorAll("footer");
+let footerOptions = {
+  threshold: 0.85,
+};
+
+function moveNavToggleBtns(distance) {
+  let navToggleBtns = document.querySelectorAll("#nav-toggle-btn");
+  navToggleBtns.forEach((btn) => {
+    btn.style.transform = `translateX(-50%) translateY(${distance})`;
+  });
+}
+
+let footerObserver = new IntersectionObserver(function (
+  entries,
+  footerObserver
+) {
+  entries.forEach((entry) => {
+    const isOpened = navigation.getAttribute("aria-expanded");
+    if (isOpened == "false") {
+      if (entry.isIntersecting) {
+        moveNavToggleBtns("150%");
+      } else {
+        moveNavToggleBtns("0%");
+      }
+    }
+  });
+},
+footerOptions);
+
+footers.forEach((footer) => {
+  footerObserver.observe(footer);
+});

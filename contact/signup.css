@@ -151,10 +151,10 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 #nav-toggle-btn:hover {
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) scale(1.04) !important;
 }
 #nav-toggle-btn:active {
-  transform: translateX(-50%) scale(0.96);
+  transform: translateX(-50%) scale(0.96) !important;
 }
 text {
   font-size: 1.6rem;
@@ -409,7 +409,7 @@ i {
   height: 101svh;
 }
 .header__img-container {
-  background-image: url(/img/signup-hero.jpg);
+  background-image: url(../img/signup-hero.jpg);
   background-size: cover;
   background-position: center;
   flex: 50%;

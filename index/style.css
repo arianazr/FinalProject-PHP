@@ -40,22 +40,21 @@ html {
 body {
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
 }
 body::-webkit-scrollbar {
   display: none;
 }
-header {
+.page-logo {
+  font-size: 1.7rem;
+  font-weight: 500;
   padding: 1.875rem 2vw;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   z-index: 10000;
   pointer-events: none;
-}
-.page-logo {
-  font-size: 1.5rem;
+  mix-blend-mode: difference;
+  color: #fff;
 }
 .main__button {
   display: inline-block;
@@ -170,10 +169,10 @@ header {
     cubic-bezier(0.45, 0.02, 0.09, 0.98);
 }
 #nav-toggle-btn:hover {
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) scale(1.04) !important;
 }
 #nav-toggle-btn:active {
-  transform: translateX(-50%) scale(0.96);
+  transform: translateX(-50%) scale(0.96) !important;
 }
 text {
   font-size: 1.6rem;
@@ -600,24 +599,24 @@ i {
 }
 .card__img {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/img/tops2.jpg);
+    url(../img/tops2.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img2 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/img/jeans3.jpg);
+    url(../img/jeans3.jpg);
   background-size: cover;
 }
 .card__img3 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/img/chuck70s2.jpg);
+    url(../img/chuck70s2.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img4 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/img/jewelry2.jpg);
+    url(../img/jewelry2.jpg);
   background-size: cover;
   background-position: center;
 }
