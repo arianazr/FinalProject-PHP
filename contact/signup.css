@@ -452,6 +452,9 @@ i {
   right: 1rem;
   bottom: 27px;
 }
+.shake-animation {
+  animation: shake 0.5s linear;
+}
 .header-form__input::placeholder {
   text-transform: uppercase;
   color: var(--color-black);
@@ -481,6 +484,26 @@ i {
   color: var(--color-black);
   transition: text-decoration 350ms, opacity 350ms;
   text-transform: uppercase;
+}
+@keyframes shake {
+  8%,
+  41% {
+    -webkit-transform: translateX(-10px);
+  }
+  25%,
+  58% {
+    -webkit-transform: translateX(10px);
+  }
+  75% {
+    -webkit-transform: translateX(-5px);
+  }
+  92% {
+    -webkit-transform: translateX(5px);
+  }
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+  }
 }
 
 @media (max-width: 1000px) {

@@ -78,7 +78,7 @@
         <div class="header__container">
           <div class="header__img-container"></div>
           <div class="form__wrapper">
-            <form class="header-form__container" action="#">
+            <form onsubmit="return validation()" class="header-form__container">
               <h1
                 style="
                   color: #000;
@@ -101,14 +101,19 @@
               >
                 We'll pick up right where we left off.
               </p>
-              <input
-                class="header-form__input"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="email"
-              />
-              <div style="position: relative; width: 100%">
+              <div style="width: 100%" class="email__container">
+                <input
+                  class="header-form__input"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="email"
+                />
+              </div>
+              <div
+                class="password__container"
+                style="position: relative; width: 100%"
+              >
                 <input
                   type="password"
                   name="password"
@@ -123,7 +128,7 @@
               <a style="margin-block: 1rem" class="main__button" href="#"
                 >Forgot your password?</a
               >
-              <a href="#" class="main__button">Sign In</a>
+              <button href="#" class="main__button">Sign In</button>
               <p
                 style="
                   color: #000;
@@ -135,7 +140,7 @@
               >
                 OR
               </p>
-              <button class="add__button flex" style="gap: 10px">
+              <a class="add__button flex" style="gap: 10px">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -152,8 +157,8 @@
                   />
                 </svg>
                 Sign in with Apple
-              </button>
-              <button class="add__button flex" style="gap: 10px">
+              </a>
+              <a class="add__button flex" style="gap: 10px">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -167,7 +172,7 @@
                   />
                 </svg>
                 Sign in with Google
-              </button>
+              </a>
               <p
                 style="
                   color: #000;
@@ -179,9 +184,9 @@
               >
                 New to ThriftOnline?
               </p>
-              <a style="margin-top: 1rem" class="main__button" href="#"
-                >Sign up</a
-              >
+              <a style="margin-top: 1rem" class="main__button" href="#">
+                Sign up
+              </a>
             </form>
           </div>
         </div>
@@ -302,5 +307,6 @@
       </footer>
     </main>
     <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
   </body>
 </html>

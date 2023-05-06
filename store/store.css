@@ -831,7 +831,54 @@ body:has(.fileter__wrapper[aria-expanded="true"]) .filter__header-nav {
   margin-left: auto;
   transition: width 0.45s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s;
 }
-
+.filter__header-nav-listed-items {
+  position: relative;
+}
+.sortby__ul {
+  list-style: none;
+  padding: 2rem 2rem 2rem 1.5rem;
+  outline: 1px solid #333;
+  outline-offset: -6px;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  right: -0.3rem;
+  z-index: 100;
+  width: 180px;
+  transition: opacity 250ms;
+  opacity: 0;
+}
+.sortby__ul[aria-hidden="true"] {
+  opacity: 1;
+}
+.sortby__items {
+  margin-bottom: 0.625rem;
+  display: flex;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.sortby__icon {
+  transition: all 250ms;
+}
+.sortby__button-label {
+  position: relative;
+  top: -1px;
+}
+.sortby__button-label::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+  position: absolute;
+  bottom: 0;
+  transform-origin: right;
+  transition: transform 350ms;
+  transform: scaleX(0);
+}
+.sortby__items:hover .sortby__button-label::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 @media (max-width: 1000px) {
   .fileter__wrapper {
     width: 100%;
