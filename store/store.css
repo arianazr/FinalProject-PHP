@@ -1185,6 +1185,121 @@ li > label {
   outline: none;
 }
 
+.modal__container {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 244, 240);
+}
+.modal__content {
+  display: flex;
+  gap: var(--gap);
+}
+.modal__img__container {
+  flex: 70%;
+}
+.modal__img-header {
+  width: 70vw;
+  object-fit: cover;
+}
+.modal__right {
+  margin-top: 3.7rem;
+  flex: 30%;
+  padding-right: var(--gap);
+}
+.modal__title {
+  text-align: center;
+  color: rgb(136, 136, 136);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 5vmin;
+}
+.modal__condition {
+  margin-top: 1rem;
+  list-style: none;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: -0.01rem;
+}
+.modal__condition-listed {
+  line-height: 1.2;
+  font-size: 18px;
+}
+.lightend__text {
+  color: #737373;
+}
+.modal__payment__container {
+  border: 1px solid #222;
+}
+.color__palet {
+  padding: 1.3125rem 0px;
+  border-bottom: 1px solid #222;
+}
+.modal__payment__find-store {
+  display: flex;
+  justify-content: center;
+}
+.final__payments-text {
+  padding: 0.6875rem 1.5rem;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.final__payments-text:nth-child(1) {
+  border-right: 1px solid #222;
+}
+.seller__container {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding-block: 1rem;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+.seller__hover {
+  position: relative;
+  cursor: pointer;
+}
+.seller__hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  transition: transform 350ms;
+  transform-origin: left;
+}
+.seller__hover:hover::before {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.garante__container {
+  padding-block: 0.75rem;
+}
+.modal__payment {
+  margin-top: 7rem;
+}
+.garante__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.garante__listed-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 0;
+  border-right: 1px solid #222;
+}
+.garante__listed-items:last-child {
+  border-right: none;
+}
 @media (max-width: 620px) {
   .card__right {
     display: none;
