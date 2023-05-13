@@ -1184,15 +1184,7 @@ li > label {
 .sortby__list2:focus {
   outline: none;
 }
-.header__title {
-  color: rgb(136, 136, 136);
-  font-size: 7vw;
-  font-weight: 400;
-  text-align: center;
-  display: none;
-  text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
+
 @media (max-width: 620px) {
   .card__right {
     display: none;
