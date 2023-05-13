@@ -443,6 +443,7 @@ i {
   border-bottom: 2px solid var(--color-black);
   color: var(--color-black);
   font-size: 1.25rem;
+  transition: border-bottom 250ms;
 }
 #password {
   position: relative;
@@ -484,6 +485,50 @@ i {
   color: var(--color-black);
   transition: text-decoration 350ms, opacity 350ms;
   text-transform: uppercase;
+}
+.signIn__popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: transform 350ms, opacity 500ms;
+}
+.signIn__granted {
+  background-color: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  outline: 1px solid #333;
+  outline-offset: -6px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+}
+.signIn__popup--animated {
+  animation-name: signIn-popUp;
+  animation-duration: 3s;
+}
+@keyframes signIn-popUp {
+  0% {
+    transform: translateY(-150%);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-150%);
+  }
 }
 @keyframes shake {
   8%,
