@@ -10,6 +10,22 @@ sortByBtn.addEventListener("click", () => {
   }
 });
 
+//FILTER EXPAND
+
+var filterBtns = document.querySelectorAll("#filter-toggle");
+var filter = document.getElementById("filter-wrp");
+
+filterBtns.forEach((filterBtn) => {
+  filterBtn.addEventListener("click", () => {
+    const isOpened = filter.getAttribute("aria-expanded");
+    if (isOpened === "false") {
+      filter.setAttribute("aria-expanded", "true");
+    } else {
+      filter.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
 let storeLogo = document.querySelector(".store-logo");
 let headerTitle = document.querySelector(".header__title");
 let headerTitleSmll = document.getElementById("header-title-smll");
@@ -112,5 +128,12 @@ function clothesModalToggle() {
 cards.forEach((card) => {
   card.addEventListener("click", clothesModalToggle);
 });
-
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const isOpened = filter.getAttribute("aria-expanded");
+    if (isOpened === "true") {
+      filter.setAttribute("aria-expanded", "false");
+    }
+  });
+});
 modalClose.addEventListener("click", clothesModalToggle);

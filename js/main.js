@@ -70,22 +70,6 @@ toggleBtns.forEach((toggleBtn) => {
   });
 });
 
-//FILTER EXPAND
-
-var filterBtns = document.querySelectorAll("#filter-toggle");
-var filter = document.getElementById("filter-wrp");
-
-filterBtns.forEach((filterBtn) => {
-  filterBtn.addEventListener("click", () => {
-    const isOpened = filter.getAttribute("aria-expanded");
-    if (isOpened === "false") {
-      filter.setAttribute("aria-expanded", "true");
-    } else {
-      filter.setAttribute("aria-expanded", "false");
-    }
-  });
-});
-
 // footer IntersectionObserver
 
 let footers = document.querySelectorAll("footer");
@@ -119,55 +103,4 @@ footerOptions);
 
 footers.forEach((footer) => {
   footerObserver.observe(footer);
-});
-
-function showCards(category) {
-  const cards = document.querySelectorAll(".card");
-
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-
-    if (card.getAttribute("id") === category) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  }
-}
-function hideCards(cards) {
-  cards.forEach((card) => {
-    card.classList.add("hidden");
-  });
-}
-
-const topButton = document.getElementById("top-button");
-topButton.addEventListener("click", () => {
-  hideCards(bottoms);
-  hideCards(shoes);
-  hideCards(accessories);
-  showCards(tops);
-});
-
-const bottomButton = document.getElementById("bottom-button");
-bottomButton.addEventListener("click", () => {
-  hideCards(tops);
-  hideCards(shoes);
-  hideCards(accessories);
-  showCards(bottoms);
-});
-
-const shoesButton = document.getElementById("shoes-button");
-shoesButton.addEventListener("click", () => {
-  hideCards(tops);
-  hideCards(bottoms);
-  hideCards(accessories);
-  showCards(shoes);
-});
-
-const accessoriesButton = document.getElementById("accessories-button");
-accessoriesButton.addEventListener("click", () => {
-  hideCards(tops);
-  hideCards(bottoms);
-  hideCards(shoes);
-  showCards(accessories);
 });

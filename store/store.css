@@ -1063,6 +1063,7 @@ body:has(.fileter__wrapper[aria-expanded="true"]) .filter__header-nav {
   margin-bottom: var(--margin);
   font-weight: 600;
   color: #333;
+  letter-spacing: -0.02rem;
 }
 .card__details {
   font-size: 14px;
@@ -1073,7 +1074,7 @@ body:has(.fileter__wrapper[aria-expanded="true"]) .filter__header-nav {
 }
 .card__img {
   height: 37vw;
-  width: 39vw;
+  width: 100vw;
   object-fit: cover;
   transition: transform 350ms;
 }
@@ -1383,8 +1384,9 @@ body:has(.modal__container[aria-expanded="true"]) .modal__toggle {
   .card__right {
     display: none;
   }
-  .right {
-    padding: var(--gap) 0;
+  .card__img {
+    aspect-ratio: 2/2.5;
+    height: unset;
   }
   #left-toggle:checked ~ .store__container > .left {
     right: 20%;
