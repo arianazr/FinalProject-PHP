@@ -137,3 +137,17 @@ cards.forEach((card) => {
   });
 });
 modalClose.addEventListener("click", clothesModalToggle);
+
+function openModal(img) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImage");
+
+  // Get the src attribute of the clicked image
+  var src = img.src;
+
+  // Update the modal image source
+  modalImg.src = src;
+
+  // Display the modal
+  modal.style.display = "block";
+}

@@ -1161,21 +1161,15 @@ body:has(.modal__container[aria-expanded="true"]) main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  padding: var(--gap);
 }
 .modal__img-header {
   object-fit: cover;
+  outline: 1px solid #737373;
+  outline-offset: 1rem;
   aspect-ratio: 1/1.1;
-}
-.modal__img-header:nth-child(1) {
-  width: 50%;
-}
-.modal__img-header:nth-child(2) {
-  width: calc(50% - 0.5rem);
-}
-.modal__img-header:nth-child(3) {
+  border-radius: 5px;
   width: 100%;
-  aspect-ratio: 2/1.2;
-  object-position: 50% 68%;
 }
 .modal__right {
   margin-top: 3.7rem;
@@ -1367,6 +1361,8 @@ input[type="radio"]#darkBlue {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  margin-inline: auto;
   transform: translateY(-200%);
   transition: transform 350ms 650ms;
 }
@@ -1379,6 +1375,21 @@ body:has(.modal__container[aria-expanded="true"]) .modal__toggle {
 }
 .modal__toggle:hover > svg {
   transform: translateX(-5px) rotateY(10deg);
+}
+.logo__wrapper > h2 {
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  bottom: -1px;
+}
+
+.modal__button-hr {
+  position: absolute;
+  height: 59%;
+  left: 29%;
+  border: none;
+  width: 1px;
+  background-color: #737373;
 }
 @media (max-width: 620px) {
   .card__right {
