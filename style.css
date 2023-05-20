@@ -599,24 +599,24 @@ i {
 }
 .card__img {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(../img/tops2.jpg);
+    url(img/tops2.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img2 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(../img/jeans3.jpg);
+    url(img/jeans3.jpg);
   background-size: cover;
 }
 .card__img3 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(../img/chuck70s2.jpg);
+    url(img/chuck70s2.jpg);
   background-size: cover;
   background-position: center;
 }
 .card__img4 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(../img/jewelry2.jpg);
+    url(img/jewelry2.jpg);
   background-size: cover;
   background-position: center;
 }
