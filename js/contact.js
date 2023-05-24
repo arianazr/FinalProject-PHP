@@ -42,3 +42,10 @@ function validation(event) {
   return true;
 }
 
+document.getElementById("email").addEventListener("input", () => {
+  document.getElementById("email").style.color = "#000";
+});
+
+document.getElementById("password").addEventListener("input", () => {
+  document.getElementById("password").style.color = "#000";
+});

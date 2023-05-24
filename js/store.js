@@ -1,5 +1,6 @@
 let sortByBtn = document.getElementById("sortby-toggle");
 let sortBy = document.querySelector(".sortby__ul");
+let sortBySvg = document.querySelector(".sortBySvg");
 
 sortByBtn.addEventListener("click", () => {
   const isOpened = sortBy.getAttribute("aria-hidden");
@@ -10,6 +11,9 @@ sortByBtn.addEventListener("click", () => {
   }
 });
 
+sortByBtn.addEventListener("click", () => {
+  sortBySvg.classList.toggle("rotated");
+});
 //FILTER EXPAND
 
 var filterBtns = document.querySelectorAll("#filter-toggle");
@@ -113,7 +117,7 @@ allClothesBtn.addEventListener("click", () => {
 // modal
 
 let clothesModal = document.querySelector(".modal__container");
-let cards = document.querySelectorAll(".card");
+let cards1 = document.querySelectorAll(".card");
 let modalClose = document.querySelector(".modal__toggle");
 
 function clothesModalToggle() {
@@ -125,10 +129,10 @@ function clothesModalToggle() {
   }
 }
 
-cards.forEach((card) => {
+cards1.forEach((card) => {
   card.addEventListener("click", clothesModalToggle);
 });
-cards.forEach((card) => {
+cards1.forEach((card) => {
   card.addEventListener("click", () => {
     const isOpened = filter.getAttribute("aria-expanded");
     if (isOpened === "true") {
@@ -139,15 +143,11 @@ cards.forEach((card) => {
 modalClose.addEventListener("click", clothesModalToggle);
 
 function openModal(img) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("modalImage");
+  let modalImg = document.querySelector(".modal__img-header");
 
   // Get the src attribute of the clicked image
-  var src = img.src;
+  let currentImg = img.src;
 
   // Update the modal image source
-  modalImg.src = src;
-
-  // Display the modal
-  modal.style.display = "block";
+  modalImg.src = currentImg;
 }

@@ -383,7 +383,7 @@
     <main style="position: relative">
       <section class="row nav__Row">
         <div class="main-bg">
-          <div id="main-height" class="main">
+          <div id="main-height" style="position: relative" class="main">
             <div class="img__wrapper">
               <div class="header-allClothes__wrapper">
                 <button id="allClothes-button">All clothes</button
@@ -865,6 +865,7 @@
               <span class="filter__button-label">Sort By</span>
               <span>
                 <svg
+                  class="sortBySvg"
                   width="16"
                   height="16"
                   viewBox="0 0 24 24"
@@ -1449,13 +1450,12 @@
         <div style="position: fixed; inset: 0" class="button__wrapper">
           <button class="modal__toggle">
             <svg
-              width="24px"
-              height="24px"
-              viewBox="-4.5 0 20 20"
+              fill="#222"
+              width="20px"
+              height="20px"
+              viewBox="0 0 32 32"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              fill="#000000"
             >
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
@@ -1464,28 +1464,9 @@
                 stroke-linejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g
-                    id="Dribbble-Light-Preview"
-                    transform="translate(-385.000000, -6679.000000)"
-                    fill="#333"
-                  >
-                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                      <path
-                        d="M338.61,6539 L340,6537.594 L331.739,6528.987 L332.62,6528.069 L332.615,6528.074 L339.955,6520.427 L338.586,6519 C336.557,6521.113 330.893,6527.014 329,6528.987 C330.406,6530.453 329.035,6529.024 338.61,6539"
-                        id="arrow_left-[#333334]"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
+                <path
+                  d="M23.505 0c0.271 0 0.549 0.107 0.757 0.316 0.417 0.417 0.417 1.098 0 1.515l-14.258 14.264 14.050 14.050c0.417 0.417 0.417 1.098 0 1.515s-1.098 0.417-1.515 0l-14.807-14.807c-0.417-0.417-0.417-1.098 0-1.515l15.015-15.022c0.208-0.208 0.486-0.316 0.757-0.316z"
+                ></path>
               </g>
             </svg>
             <hr class="modal__button-hr" />
@@ -1496,7 +1477,49 @@
         </div>
         <div class="modal__content">
           <div class="modal__img__container">
-            <img class="modal__img-header" id="modalImage" src="" />
+            <svg
+              fill="#222"
+              width="24px"
+              height="24px"
+              viewBox="0 0 32 32"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              id="arrow-left"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M23.505 0c0.271 0 0.549 0.107 0.757 0.316 0.417 0.417 0.417 1.098 0 1.515l-14.258 14.264 14.050 14.050c0.417 0.417 0.417 1.098 0 1.515s-1.098 0.417-1.515 0l-14.807-14.807c-0.417-0.417-0.417-1.098 0-1.515l15.015-15.022c0.208-0.208 0.486-0.316 0.757-0.316z"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              fill="#222"
+              width="24px"
+              height="24px"
+              viewBox="0 0 32 32"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              id="arrow-right"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M23.505 0c0.271 0 0.549 0.107 0.757 0.316 0.417 0.417 0.417 1.098 0 1.515l-14.258 14.264 14.050 14.050c0.417 0.417 0.417 1.098 0 1.515s-1.098 0.417-1.515 0l-14.807-14.807c-0.417-0.417-0.417-1.098 0-1.515l15.015-15.022c0.208-0.208 0.486-0.316 0.757-0.316z"
+                ></path>
+              </g>
+            </svg>
+            <img class="modal__img-header" src="" />
           </div>
           <div class="modal__right">
             <div>

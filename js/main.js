@@ -104,3 +104,25 @@ footerOptions);
 footers.forEach((footer) => {
   footerObserver.observe(footer);
 });
+
+const cardContainer = document.querySelector(".header__row");
+const cards = document.querySelectorAll(".header__content");
+const cardOptions = {
+  threshold: 0.25,
+};
+
+let cardObserver = new IntersectionObserver(function (entries, cardObserver) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      cards.forEach((card) => {
+        card.style.opacity = "1";
+      });
+    } else {
+      cards.forEach((card) => {
+        card.style.opacity = "0";
+      });
+    }
+  });
+}, cardOptions);
+
+cardObserver.observe(cardContainer);

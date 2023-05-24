@@ -641,6 +641,10 @@ input::-webkit-inner-spin-button {
 .img__wrapper-right {
   max-width: 13.25rem;
   margin-left: auto;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding-left: 1rem;
 }
 .img__wrapper-right > p {
   margin-bottom: 1.55rem;
@@ -704,12 +708,24 @@ input::-webkit-inner-spin-button {
   align-items: flex-end;
   gap: 1.55rem;
 }
-
+@media (max-width: 880px) {
+  .img__wrapper-left__inner {
+    width: 60%;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 3.75rem;
+  }
+  .img__wrapper-left__inner::-webkit-scrollbar {
+    width: 0;
+  }
+}
 .wrapper__items {
   list-style: none;
   display: inline-flex;
   gap: 4rem;
-  flex-wrap: wrap;
+}
+.wrapper__items > * {
+  flex: 30%;
 }
 .wrapper__links {
   display: inline-flex;
@@ -1157,19 +1173,21 @@ body:has(.modal__container[aria-expanded="true"]) main {
   height: fit-content;
 }
 .modal__img__container {
-  flex: 70%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex: 70%;
   gap: 0.5rem;
-  padding: var(--gap);
+  padding: 5rem var(--gap) 1rem;
+  position: relative;
+  z-index: -1;
 }
 .modal__img-header {
-  object-fit: cover;
+  object-fit: contain;
   outline: 1px solid #737373;
   outline-offset: 1rem;
-  aspect-ratio: 1/1.1;
+  aspect-ratio: 1/0.8;
   border-radius: 5px;
-  width: 100%;
+  width: 46vw;
 }
 .modal__right {
   margin-top: 3.7rem;
@@ -1226,7 +1244,7 @@ body:has(.modal__container[aria-expanded="true"]) main {
   transition: all 359ms;
   position: relative;
 }
-input[type="radio"]::before {
+.color__palet input[type="radio"]::before {
   content: "";
   position: absolute;
   top: -4px;
@@ -1390,6 +1408,25 @@ body:has(.modal__container[aria-expanded="true"]) .modal__toggle {
   border: none;
   width: 1px;
   background-color: #737373;
+}
+#arrow-right {
+  rotate: 180deg;
+  position: absolute;
+  top: 53%;
+  right: 18%;
+  cursor: pointer;
+}
+#arrow-left {
+  position: absolute;
+  top: 53%;
+  left: 18%;
+  cursor: pointer;
+}
+.sortBySvg {
+  transition: transform 350ms;
+}
+.sortBySvg.rotated {
+  transform: rotate(180deg);
 }
 @media (max-width: 620px) {
   .card__right {
