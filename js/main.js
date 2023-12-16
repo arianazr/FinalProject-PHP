@@ -1,6 +1,6 @@
 //  NAV TOGGLE
 let navigation = document.querySelector(".nav__wrapper");
-let navToggles = document.querySelectorAll("#nav-toggle-btn");
+let navToggles = document.querySelectorAll(".btn");
 
 navToggles.forEach((navToggle) => {
   navToggle.addEventListener("click", () => {
@@ -13,7 +13,49 @@ navToggles.forEach((navToggle) => {
     }
   });
 });
+// LOGIN TOGGLE 
+let loginModal = document.querySelector(".loginModal");
+let logInBtn = document.querySelector(".btn2");
 
+  logInBtn.addEventListener("click", () => {
+    const isOpened = loginModal.getAttribute("aria-expanded");
+
+    if (isOpened == "false") {
+      loginModal.setAttribute("aria-expanded", "true");
+    } else {
+      loginModal.setAttribute("aria-expanded", "false");
+    }
+  });
+  loginModal.addEventListener("click", ()=> {
+    const isOpened = loginModal.getAttribute("aria-expanded");
+    if (isOpened == "true") {
+      loginModal.setAttribute("aria-expanded", "false");
+    } else {
+      loginModal.setAttribute("aria-expanded", "true");
+    }
+  });
+// SIGNUP toggle 
+// LOGIN TOGGLE 
+let signInModal = document.querySelector(".signInModal");
+let signInBtn = document.querySelector(".btn3");
+
+signInBtn.addEventListener("click", () => {
+    const isOpened = signInModal.getAttribute("aria-expanded");
+
+    if (isOpened == "false") {
+      signInModal.setAttribute("aria-expanded", "true");
+    } else {
+      signInModal.setAttribute("aria-expanded", "false");
+    }
+  });
+  signInModal.addEventListener("click", ()=> {
+    const isOpened = signInModal.getAttribute("aria-expanded");
+    if (isOpened == "true") {
+      signInModal.setAttribute("aria-expanded", "false");
+    } else {
+      signInModal.setAttribute("aria-expanded", "true");
+    }
+  });
 // PASSWORD TOGGLE
 
 function passwordToggle() {
@@ -126,3 +168,11 @@ let cardObserver = new IntersectionObserver(function (entries, cardObserver) {
 }, cardOptions);
 
 cardObserver.observe(cardContainer);
+
+// Login Logic
+
+let loginBtn = document.querySelector(".loginInBtn");
+
+loginBtn.addEventListener("click", ()=> {
+  
+})
