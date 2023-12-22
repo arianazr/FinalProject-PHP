@@ -35,7 +35,6 @@ let logInBtn = document.querySelector(".btn2");
     }
   });
 // SIGNUP toggle 
-// LOGIN TOGGLE 
 let signInModal = document.querySelector(".signInModal");
 let signInBtn = document.querySelector(".btn3");
 
@@ -169,10 +168,3 @@ let cardObserver = new IntersectionObserver(function (entries, cardObserver) {
 
 cardObserver.observe(cardContainer);
 
-// Login Logic
-
-let loginBtn = document.querySelector(".loginInBtn");
-
-loginBtn.addEventListener("click", ()=> {
-  
-})

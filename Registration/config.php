@@ -11,4 +11,12 @@ try {
 } catch (PDOException $e) {
     echo "error: ". $e->getMessage();
 }
+
+function logoutUser() {
+    session_unset();
+    session_destroy();
+}
+function isUserLoggedIn() {
+    return empty($_SESSION["email"]);
+}
 ?>

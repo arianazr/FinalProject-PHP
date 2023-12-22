@@ -19,15 +19,16 @@
 		}
 		else
 		{
-			$sql = "SELECT email FROM users WHERE email=:email";
+			$sql = "SELECT email, username FROM users WHERE email=:email, username=:username";
 
 			$tempSQL = $conn->prepare($sql);
 			$tempSQL->bindParam(':email', $email);
+			$tempSQL->bindParam(':username', $username);
 			$tempSQL->execute();
 
 			if($tempSQL->rowCount() > 0)
 			{
-				echo "email exists!";
+				echo "email or username exists!";
 				header( "refresh:2; url=Signup.php" ); 
 			}
 			else

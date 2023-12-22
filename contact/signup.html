@@ -29,28 +29,23 @@
   <body id="bodyoverflow">
     <nav>
       <div class="nav__background"></div>
-      <button id="nav-toggle-btn" class="btn">
-        <text>
-          <span class="menu__label">
-            <span class="label-letter">M</span>
-            <span class="label-letter1">e</span>
-            <span class="label-letter2">n</span>
-            <span class="label-letter3">u</span>
-          </span>
-          <span class="menu__lable-close">
-            <span class="close-letter">C</span>
-            <span class="close-letter1">l</span>
-            <span class="close-letter2">o</span>
-            <span class="close-letter3">s</span>
-            <span class="close-letter4">e</span>
-          </span>
-        </text>
+        <button id="nav-toggle-btn" class="btn">
+          <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H14M4 18H9" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      <text class="hoverPOPUP">Menu</text>
+        </button>
+      <button id="nav-toggle-btn" class="btn2">
+        <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <text class="hoverPOPUP">Login</text> 
+      </button>
+      <button id="nav-toggle-btn" class="btn3">
+        <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <text class="hoverPOPUP">Sign Up</text>
       </button>
       <div class="nav__wrapper" aria-expanded="false">
         <div style="transform: none" id="transform">
           <div id="nav-links">
             <a class="nav-link" href="../index.html">
-              <h2 class="nav-link-label rubik-font">Home</h2>
+              <h2 id="active" class="nav-link-label rubik-font">Home</h2>
               <img class="nav-link-image" src="../img/home-src.png" />
             </a>
             <a class="nav-link" href="../store/store.html">
@@ -61,8 +56,8 @@
               <h2 class="nav-link-label rubik-font">About</h2>
               <img class="nav-link-image" src="../img/about-scr.png" />
             </a>
-            <a class="nav-link" href="../contact/signup.html">
-              <h2 id="active" class="nav-link-label rubik-font">Contact</h2>
+            <a class="nav-link" href="#">
+              <h2 class="nav-link-label rubik-font">Contact</h2>
               <img class="nav-link-image" src="../img/about-nav.png" />
             </a>
             <a class="nav-link" href="../team/team.html">
@@ -75,124 +70,41 @@
     </nav>
     <main>
       <section>
-        <div class="header__container">
-          <div class="header__img-container"></div>
-          <div class="form__wrapper">
-            <form
-              onsubmit="return validation(event)"
-              class="header-form__container"
-            >
-              <h1
-                style="
-                  color: #000;
-                  font-weight: 300;
-                  text-transform: uppercase;
-                  letter-spacing: -0.04rem;
-                "
-              >
-                Sign In
-              </h1>
-              <p
-                style="
-                  color: #000;
-                  margin-bottom: 2rem;
-                  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                    'Helvetica Neue', sans-serif;
-                  letter-spacing: -0.04rem;
-                "
-              >
-                We'll pick up right where we left off.
-              </p>
-              <div style="width: 100%" class="email__container">
-                <input
-                  class="header-form__input"
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="email"
-                />
-              </div>
-              <div
-                class="password__container"
-                style="position: relative; width: 100%"
-              >
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="header-form__input"
-                  placeholder="password"
-                />
-                <label onclick="passwordToggle()"
-                  ><i id="password-toggle" class="fa-regular fa-eye"></i
-                ></label>
-              </div>
-              <a style="margin-block: 1rem" class="main__button" href="#"
-                >Forgot your password?</a
-              >
-              <button href="#" class="main__button">Sign In</button>
-              <p
-                style="
-                  color: #000;
-                  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                    'Helvetica Neue', sans-serif;
-                  margin: 0.5rem;
-                "
-              >
-                OR
-              </p>
-              <a class="add__button flex" style="gap: 10px">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  class="bi bi-apple"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
-                  />
-                  <path
-                    d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
-                  />
-                </svg>
-                Sign in with Apple
-              </a>
-              <a class="add__button flex" style="gap: 10px">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  class="bi bi-google"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
-                  />
-                </svg>
-                Sign in with Google
-              </a>
-              <p
-                style="
-                  color: #000;
-                  margin-top: 2rem;
-                  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                    'Helvetica Neue', sans-serif;
-                "
-              >
-                New to ThriftOnline?
-              </p>
-              <a style="margin-top: 1rem" class="main__button" href="#">
-                Sign up
-              </a>
-            </form>
-          </div>
-        </div>
+<div class="contact__container">
+  <div class="left"></div>
+  <div class="right">
+  <ul class="contact__list">
+    <li class="listed__items"><h1>Get in touch</h1></li>
+    <li class="listed__items">
+      <h3>Write Us</h3>
+    <p>thriftOnline@gmail.com</p>
+    </li>
+    <li class="listed__items">
+      <h3>Call us</h3>
+      <p>+389 (0)75 345 521</p>
+    </li>
+    <li class="listed__items">
+      <h3>Join Us</h3>
+      <p>join.thriftOnline.com</p>
+    </li>
+    <li class="listed__items">
+      <h3>Visit us</h3>
+      <p>
+        Baarsjesweg 285-286 | 1058 AE Amsterdam
+      </p>
+    </li>
+    <li class="listed__items">
+      <h3>Follow Us</h3>
+      <ul class="socials__list">
+        <li class="socials__listed-items">Facebook</li>
+        <li class="socials__listed-items">Instagram</li>
+        <li class="socials__listed-items">Twitter</li>
+        <li class="socials__listed-items">LinkedIn</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
       </section>
       <footer>
         <div class="footer__left">
@@ -309,30 +221,112 @@
         </div>
       </footer>
     </main>
-    <div class="signIn__popup">
-      <div class="signIn__granted">
-        <p>Successfully signed in</p>
-        <svg
-          fill="#4e6c50"
-          width="32px"
-          height="32px"
-          viewBox="0 0 56.00 56.00"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#018901"
-          stroke-width="0.00056"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
+    <div class="loginModal" aria-expanded="false" >
+      <div class="loginContainer">
+        <div class="loginDesc">
+          <h1>Login</h1>
+          <p>Log in to your ThriftOnline account to buy, sell, comment, and more.</p>
+        </div>
+        <div class="socialMediaLogin">
+        <a class="add__button flex" style="gap: 10px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-apple"
+            viewBox="0 0 16 16"
+          >
             <path
-              d="M 23.6641 52.3985 C 26.6172 55.375 29.3594 55.3516 32.3126 52.3985 L 35.9219 48.8125 C 36.2969 48.4610 36.6250 48.3203 37.1172 48.3203 L 42.1797 48.3203 C 46.3749 48.3203 48.3204 46.3985 48.3204 42.1797 L 48.3204 37.1172 C 48.3204 36.625 48.4610 36.2969 48.8124 35.9219 L 52.3749 32.3125 C 55.3749 29.3594 55.3514 26.6172 52.3749 23.6641 L 48.8124 20.0547 C 48.4610 19.7031 48.3204 19.3516 48.3204 18.8829 L 48.3204 13.7969 C 48.3204 9.625 46.3985 7.6563 42.1797 7.6563 L 37.1172 7.6563 C 36.6250 7.6563 36.2969 7.5391 35.9219 7.1875 L 32.3126 3.6016 C 29.3594 .6250 26.6172 .6485 23.6641 3.6016 L 20.0547 7.1875 C 19.7032 7.5391 19.3516 7.6563 18.8828 7.6563 L 13.7969 7.6563 C 9.6016 7.6563 7.6563 9.5782 7.6563 13.7969 L 7.6563 18.8829 C 7.6563 19.3516 7.5391 19.7031 7.1876 20.0547 L 3.6016 23.6641 C .6251 26.6172 .6485 29.3594 3.6016 32.3125 L 7.1876 35.9219 C 7.5391 36.2969 7.6563 36.625 7.6563 37.1172 L 7.6563 42.1797 C 7.6563 46.3750 9.6016 48.3203 13.7969 48.3203 L 18.8828 48.3203 C 19.3516 48.3203 19.7032 48.4610 20.0547 48.8125 Z M 24.0391 39.7891 C 23.3126 39.7891 22.8438 39.5547 22.4923 39.1563 L 14.6641 30.4609 C 14.3360 30.0860 14.1485 29.6172 14.1485 29.125 C 14.1485 28.0234 14.9923 27.2031 16.1876 27.2031 C 16.8204 27.2031 17.2891 27.4141 17.7110 27.8594 L 23.9219 34.7266 L 35.9923 17.7344 C 36.4610 17.0547 36.9297 16.7734 37.7501 16.7734 C 38.8985 16.7734 39.7188 17.6172 39.7188 18.7188 C 39.7188 19.1172 39.5547 19.5860 39.2969 19.9609 L 25.6328 39.0625 C 25.2813 39.5078 24.7423 39.7891 24.0391 39.7891 Z"
-            ></path>
-          </g>
-        </svg>
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
+            />
+            <path
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
+            />
+          </svg>
+          Continue with Apple
+        </a>
+        <a class="add__button flex" style="gap: 10px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-google"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+            />
+          </svg>
+          Continue with Google
+        </a>
+        <a class="add__button flex" style="gap: 10px">
+          <svg  
+          width="32"
+          height="32"
+          fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"></path></g></svg>
+          Continue with Facebook
+        </a>
+        </div>
+        <div class="userLogin">
+          <a class="loginInBtn" href="Registration/Login.php">Log in with email</a>
+          <p>Dont have an account? <a href="">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="signInModal" aria-expanded="false" >
+      <div class="loginContainer">
+        <div class="loginDesc">
+          <h1>Sign In</h1>
+          <p>Sign in to your ThriftOnline account to buy, sell, comment, and more.</p>
+        </div>
+        <div class="socialMediaLogin">
+        <a class="add__button flex" style="gap: 10px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-apple"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
+            />
+            <path
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"
+            />
+          </svg>
+          Continue with Apple
+        </a>
+        <a class="add__button flex" style="gap: 10px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-google"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+            />
+          </svg>
+          Continue with Google
+        </a>
+        <a class="add__button flex" style="gap: 10px">
+          <svg  
+          width="32"
+          height="32"
+          fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"></path></g></svg>
+          Continue with Facebook
+        </a>
+        </div>
+        <div class="userLogin">
+          <a class="loginInBtn" href="Registration/Signup.php">Sign in with email</a>
+          <p>Already have an account? <a href="Registration/Login.php">Login</a></p>
+        </div>
       </div>
     </div>
     <script src="../js/main.js"></script>

@@ -176,102 +176,35 @@ header {
 #nav-toggle-btn:active {
   transform: translateX(-50%) scale(0.96) !important;
 }
-text {
-  font-size: 1.6rem;
-  line-height: 1.7;
-  font-weight: 400;
-  letter-spacing: -0.12em;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  user-select: none;
-  pointer-events: none;
+button.btn2 {
+  left: 4rem !important; 
+  width: 4.789rem !important;
 }
-.menu__label {
+button.btn3 {
+  left: 10.5rem !important; 
+  width: 4.789rem !important;
+}
+.hoverPOPUP {
   position: absolute;
-  z-index: 400;
-  right: 0;
-  top: -1.5em;
-  mix-blend-mode: difference;
-  transform: translate(-20px, 30px) scale(0.85) rotate(-20deg);
-  transition: transform 350ms;
-  transform-origin: 50% 50%;
-  animation: menu-popup 3350ms ease 1s infinite;
+  top: -1rem;
+  right: -1.5rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.4rem;
+  border-radius: 3rem 3rem 3rem 0;
+  opacity: 0;
+  transition: opacity 380ms;
 }
-#nav-toggle-btn:hover .menu__label {
-  transform: translate(45px, 46px) scale(1) rotate(55deg);
-  animation: none;
+#nav-toggle-btn:hover .hoverPOPUP {
+  opacity: 1;
 }
-body:has(.nav__wrapper[aria-expanded="true"]) .menu__label {
-  display: none;
+body:has(.nav__wrapper[aria-expanded="true"]) .hoverPOPUP {
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
-.menu__label > span {
-  display: inline-block;
-}
-.label-letter {
-  position: relative;
-  transform: rotate(3.75deg);
-}
-.label-letter1 {
-  position: relative;
-  top: 1px;
-  transform: rotate(17.5deg);
-}
-.label-letter2 {
-  position: relative;
-  top: 7px;
-  transform: rotate(32.25deg);
-}
-.label-letter3 {
-  position: relative;
-  left: -2px;
-  top: 16px;
-  transform: rotate(38deg);
-}
-.menu__lable-close {
-  display: none;
-  position: absolute;
-  z-index: 400;
-  right: 0px;
-  top: -1.5em;
-  transform: translate(45px, 46px) rotate(55deg);
-  color: rgba(240, 240, 240, 0.8);
-}
-body:has(.nav__wrapper[aria-expanded="true"]) .menu__lable-close {
-  display: block;
-}
-.menu__lable-close > span {
-  display: inline-block;
-}
-.close-letter {
-  position: relative;
-  top: 2px;
-  left: -1px;
-  transform: rotate(3.75deg);
-}
-.close-letter1 {
-  position: relative;
-  top: 3px;
-  transform: rotate(13.5deg);
-}
-.close-letter2 {
-  position: relative;
-  top: 5px;
-  transform: rotate(20.25deg);
-}
-.close-letter3 {
-  position: relative;
-  left: -1px;
-  top: 10px;
-  transform: rotate(32deg);
-}
-.close-letter4 {
-  position: relative;
-  left: -3px;
-  top: 17px;
-  transform: rotate(43deg);
-}
+
 body:has(.nav__wrapper[aria-expanded="true"]) #nav-toggle-btn {
-  background-color: var(--color-blue);
+background-color: var(--color-blue);
 }
 .nav__background {
   position: fixed;
@@ -630,6 +563,100 @@ i {
 }
 .commission__fee > p:nth-of-type(2) > a:hover {
   text-decoration: none;
+}
+.loginModal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background-color: rgba(0 0 0 / 60%);
+  transform: translateX(100%);
+  transition: opacity 360ms;
+  opacity: 0;
+}
+.signInModal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background-color: rgba(0 0 0 / 60%);
+  transform: translateX(100%);
+  transition: opacity 360ms;
+  opacity: 0;
+}
+body:has(.loginModal[aria-expanded="true"]) .loginModal {
+  transform: translateX(0%);
+  opacity: 1;
+}
+body:has(.signInModal[aria-expanded="true"]) .signInModal {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.loginContainer {
+  width: 35%;
+  height: 85%;
+  background-color: #fff;
+  border-radius: 1rem;
+  outline: 1px solid grey;
+  outline-offset: -5px;
+  padding: 2em 4em;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.add__button {
+  margin: 0.379rem;
+    border-radius: 25px;
+    border: 2px solid var(--color-black);
+    height: 50px;
+    background: transparent;
+    width: 100%;
+    transition: color 0.2s ease 0s, background-color 0.2s ease 0s;
+    font-size: 1rem;
+    color: var(--color-black);
+    cursor: pointer;
+}
+.add__button:hover {
+  border: none;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.loginInBtn {
+  display: inline-block;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100%;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+border-radius: 5px;
+transition: all 350ms;
+}
+.loginInBtn:hover {
+  background-color: #333;
+}
+.userLogin > p > a {
+  color: var(--color-black);
+  display: inline-block;
+  margin-top: 0.8765rem;
+}
+.userLogin > p > a:hover {
+  color: #555;
+}
+.loginDesc > h1{
+margin:1rem 0rem;
 }
 @media (max-width: 880px) {
   .commission__fee {

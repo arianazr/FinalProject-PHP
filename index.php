@@ -1,3 +1,17 @@
+<?php
+include_once("Registration/config.php");
+if(empty($_SESSION['email']))
+{
+echo "user not logged in";
+} else {
+  echo "user logged in";
+}
+$sql = "SELECT * FROM users";
+$selectUsers = $conn->prepare($sql);
+$selectUsers->execute();
+
+$users_data = $selectUsers->fetchAll();
+?>
 <!DOCTYPE html>
 <html id="scrolltop" lang="en">
   <head>
@@ -22,68 +36,48 @@
       sizes="32x32"
       href="img/favicon-32x32.png"
     />
+    <style>
+    .btn3 {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu__label {
+      position: absolute;
+      white-space: nowrap;
+      transform-origin: 50% 50%;
+    }
+  </style>
     <title>ThriftOnline | Vintage Online Store</title>
   </head>
   <body id="bodyoverflow">
     <nav>
       <div class="nav__background"></div>
-      <button id="nav-toggle-btn" class="btn">
-        <text>
-          <span class="menu__label">
-            <span class="label-letter">M</span>
-            <span class="label-letter1">e</span>
-            <span class="label-letter2">n</span>
-            <span class="label-letter3">u</span>
-          </span>
-          <span class="menu__lable-close">
-            <span class="close-letter">C</span>
-            <span class="close-letter1">l</span>
-            <span class="close-letter2">o</span>
-            <span class="close-letter3">s</span>
-            <span class="close-letter4">e</span>
-          </span>
-        </text>
-      </button>
-      <button id="nav-toggle-btn" class="btn2">
-        <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <text>
-          <span class="menu__label menu__label2">
-            <span class="label-letterL">L</span>
-            <span class="label-letter1L">o</span>
-            <span class="label-letter2L">g</span>
-            <span class="label-letter3L">i</span>
-            <span class="label-letter4L">n</span>
-          </span>
-          <span class="menu__lable-close menu__lable-close2">
-            <span class="label-letterL">L</span>
-            <span class="label-letter1L">o</span>
-            <span class="label-letter2L">g</span>
-            <span class="label-letter3L">i</span>
-            <span class="label-letter4L">n</span>
-          </span>
-        </text>
+        <button id="nav-toggle-btn" class="btn">
+          <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H14M4 18H9" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      <text class="hoverPOPUP">Menu</text>
+        </button>
+        <?php if(empty($_SESSION["email"])) {?>
+         
+          <button id="nav-toggle-btn" class="btn2">
+            <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <text class="hoverPOPUP">Login</text> 
       </button>
       <button id="nav-toggle-btn" class="btn3">
         <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <text>
-          <span class="menu__label menu__label2">
-            <span class="label-letterS">S</span>
-            <span class="label-letter1S">i</span>
-            <span class="label-letter2S">g</span>
-            <span class="label-letter3S">n</span>
-            <span class="label-letter4S">U</span>
-            <span class="label-letter5S">p</span>
-          </span>
-          <span class="menu__lable-close menu__lable-close2">
-            <span class="close-letter">S</span>
-            <span class="close-letter1">i</span>
-            <span class="close-letter2">g</span>
-            <span class="close-letter3">n</span>
-            <span class="close-letter4">U</span>
-            <span class="close-letter5">p</span>
-          </span>
-        </text>
+        <text class="hoverPOPUP">Sign Up</text>
       </button>
+        <?php } else {?>
+          <a id="nav-toggle-btn" href="profile.php" class="profileBtn">
+            <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <text class="hoverPOPUP">Profile</text> 
+        </a>
+      <?php }?>
       <div class="nav__wrapper" aria-expanded="false">
         <div style="transform: none" id="transform">
           <div id="nav-links">

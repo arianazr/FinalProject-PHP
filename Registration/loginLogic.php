@@ -19,7 +19,7 @@ if(isset($_POST["submit"])){
             $data=$insertSql->fetch();
             if(password_verify($password,$data["password"])) {
                 $_SESSION["email"]=$data["email"];
-                header("Location: ../index.html");
+                header("Location: ../index.php");
             } else {
                 echo "Password incorrect";
                 header("refresh:2; url=Login.php");
