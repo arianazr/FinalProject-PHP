@@ -1153,7 +1153,39 @@ right: 49%;
 .profile__nav {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: var(--gap);
+}
+.profile__wrapper-update {
+  padding: 2rem; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.profile__wrapper-update > * {
+  flex: 33%;
+}
+.profile__input {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid;
+opacity: 0.5;
+}
+.profile__input:focus {
+  opacity: 1;
+}
+.updateBtn {
+  padding: 1rem 2rem;
+  margin-inline: var(--gap);
+  font-size: 1rem;
+  background-color: var(--color-black);
+  color: white;
+  cursor: pointer;
+outline: 1px solid var(--color-white);
+outline-offset: 0px;
+transition: outline-offset 350ms;
+}
+.updateBtn:hover {
+  outline-offset: -5px;
 }
 @media (max-width: 1000px) {
   .carousel__row {

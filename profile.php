@@ -1,3 +1,18 @@
+<?php
+include_once("Registration/config.php");
+
+if(empty($_SESSION['email'])) {
+  header("Location: index.php");
+};
+
+$id = $_GET["id"];
+$sql = "SELECT * FROM users WHERE id=:id";
+$selectUsers = $conn->prepare($sql);
+$selectUsers->bindParam(':id', $id);
+$selectUsers->execute();
+
+$user_data = $selectUsers->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +95,7 @@
     <div class="profile__title">
         <h1>ThriftOnline</h1>
         <h3>Profile</h3>
-        <div class="username"><span>Arian</span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
+        <div class="username"><span><?php echo $_SESSION["username"]?></span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
         </div>
     <div class="profile__wrapper">
         <div class="profile__left">
@@ -92,7 +107,19 @@
                 <li class="main__button profile__listed"><a href="#">Devices</a></li>
             </ul>
         </div>
-        <div class="profile__right"></div>
+        <div class="profile__right">
+            <form action="Registration/update.php" method="post" class="form-profile">
+            <div class="profile__wrapper-update">
+              <input type="text" class="profile__input" name="name" id="name" value="<?php echo $user_data["name"]?>">
+              <input type="text" class="profile__input" name="username" id="username" value="<?php echo $user_data["username"]?>">
+              <input type="text" class="profile__input" name="email" id="email" value="<?php echo $user_data["email"]?>">
+              <input type="text" class="profile__input" name="phone" id="phone" value="<?php echo $user_data["phone"]?>">
+              <input type="text" class="profile__input" name="address" id="address" value="<?php echo $user_data["address"]?>">
+  </div>
+              <button class="updateBtn" name="update">Update</button>
+            </form>
+          </div>
+        </div>
         </div>
     </div>
 </div>

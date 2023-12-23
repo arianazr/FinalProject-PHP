@@ -3,14 +3,14 @@ include_once("Registration/config.php");
 if(empty($_SESSION['email']))
 {
 echo "user not logged in";
+
 } else {
   echo "user logged in";
+  echo $_SESSION["id"];
+  echo $_SESSION["email"];
+  echo $_SESSION["username"];
 }
-$sql = "SELECT * FROM users";
-$selectUsers = $conn->prepare($sql);
-$selectUsers->execute();
 
-$users_data = $selectUsers->fetchAll();
 ?>
 <!DOCTYPE html>
 <html id="scrolltop" lang="en">
@@ -56,6 +56,7 @@ $users_data = $selectUsers->fetchAll();
     <title>ThriftOnline | Vintage Online Store</title>
   </head>
   <body id="bodyoverflow">
+    
     <nav>
       <div class="nav__background"></div>
         <button id="nav-toggle-btn" class="btn">
@@ -73,9 +74,9 @@ $users_data = $selectUsers->fetchAll();
         <text class="hoverPOPUP">Sign Up</text>
       </button>
         <?php } else {?>
-          <a id="nav-toggle-btn" href="profile.php" class="profileBtn">
+          <a id="nav-toggle-btn" href="profile.php?id=<?= $_SESSION["id"];?>" class="profileBtn">
             <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            <text class="hoverPOPUP">Profile</text> 
+            <text class="hoverPOPUP"><?php echo $_SESSION["username"];?></text> 
         </a>
       <?php }?>
       <div class="nav__wrapper" aria-expanded="false">

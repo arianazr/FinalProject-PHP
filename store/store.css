@@ -175,6 +175,10 @@ body::-webkit-scrollbar {
 #nav-toggle-btn:active {
   transform: translateX(-50%) scale(0.96) !important;
 }
+.profileBtn {
+  left: 4rem !important; 
+  width: 4.789rem !important;
+}
 button.btn2 {
   left: 4rem !important; 
   width: 4.789rem !important;
@@ -999,6 +1003,8 @@ body:has(.fileter__wrapper[aria-expanded="true"]) .filter__header-nav {
   border-bottom: 1px solid #737373;
   padding-bottom: 1rem;
   cursor: pointer;
+  text-decoration: none;
+    color: black;
 }
 
 .card__price {
@@ -1082,11 +1088,8 @@ li > label {
   width: 100%;
   height: 100%;
   background-color: rgb(245, 244, 240);
-  overflow: auto;
-  transform: translateX(100%);
-  transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s,
+  overflow: auto;  transition: transform 0.65s cubic-bezier(0.45, 0.02, 0.09, 0.98) 0s,
     opacity 500ms;
-  opacity: 0;
 }
 .modal__container[aria-expanded="true"] {
   transform: translateX(0%);
@@ -1301,6 +1304,9 @@ input[type="radio"]#darkBlue {
 .modal__toggle {
   border: none;
   background-color: rgb(245, 244, 240);
+  width: fit-content;
+  text-decoration: none;
+  color: #000;
   position: sticky;
   top: 2.5rem;
   left: 2.5rem;
@@ -1314,7 +1320,6 @@ input[type="radio"]#darkBlue {
   align-items: center;
   gap: 1rem;
   margin-inline: auto;
-  transform: translateY(-200%);
   transition: transform 350ms 650ms;
 }
 body:has(.modal__container[aria-expanded="true"]) .modal__toggle {
@@ -1455,6 +1460,11 @@ transition: all 350ms;
 }
 .loginDesc > h1{
 margin:1rem 0rem;
+}
+.card__container-N {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+  gap: var(--gap); 
 }
 @media (max-width: 620px) {
   .card__right {

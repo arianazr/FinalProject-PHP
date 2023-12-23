@@ -147,7 +147,6 @@ function openModal(img) {
 
   // Get the src attribute of the clicked image
   let currentImg = img.src;
-
   // Update the modal image source
   modalImg.src = currentImg;
 }
