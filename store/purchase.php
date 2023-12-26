@@ -1,3 +1,14 @@
+<?php 
+include_once("../Registration/config.php");
+
+$id = $_GET["id"];
+$sql = "SELECT * FROM products WHERE id=:id";
+$selectUsers = $conn->prepare($sql);
+$selectUsers->bindParam(':id', $id);
+$selectUsers->execute();
+
+$user_data = $selectUsers->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,11 +112,11 @@
                 ></path>
               </g>
             </svg>
-            <img class="modal__img-header" src="" alt="" />
+            <img class="modal__img-header" src="<?php echo $user_data["img"]?>" />
           </div>
           <div class="modal__right">
             <div>
-              <h2 class="modal__title">Title of the clothes</h2>
+              <h2 class="modal__title"><?php echo $user_data["name"]?></h2>
               <ul class="modal__condition">
                 <li class="modal__condition-listed">
                   Russell Vintage Men In Black 3 Promo Tee
@@ -113,14 +124,14 @@
                 <li class="modal__condition-listed">
                   Size
                   <span class="lightend__text"
-                    >Men's / US L / EU 52-54 / 3</span
+                    ><?php echo $user_data["size"]?></span
                   >
                 </li>
                 <li class="modal__condition-listed">
-                  Color <span class="lightend__text">Blue</span>
+                  Color <span class="lightend__text"><?php echo $user_data["color"]?></span>
                 </li>
                 <li class="modal__condition-listed">
-                  Condition <span class="lightend__text">Gently Used</span>
+                  Condition <span class="lightend__text"><?php echo $user_data["kondition"]?></span>
                 </li>
               </ul>
             </div>

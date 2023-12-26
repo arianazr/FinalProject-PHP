@@ -1,15 +1,5 @@
 <?php
 include_once("../Registration/config.php");
-if(empty($_SESSION['email']))
-{
-echo "user not logged in";
-
-} else {
-  echo "user logged in";
-  echo $_SESSION["id"];
-  echo $_SESSION["email"];
-  echo $_SESSION["username"];
-}
 
 ?>
 <!DOCTYPE html>
@@ -72,25 +62,25 @@ echo "user not logged in";
       <div class="nav__wrapper" aria-expanded="false">
         <div style="transform: none" id="transform">
           <div id="nav-links">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index.php">
               <h2 id="active" class="nav-link-label rubik-font">Home</h2>
-              <img class="nav-link-image" src="img/home-src.png" />
+              <img class="nav-link-image" src="../img/home-src.png" />
             </a>
-            <a class="nav-link" href="store/store.html">
+            <a class="nav-link" href="#">
               <h2 class="nav-link-label rubik-font">Store</h2>
-              <img class="nav-link-image" src="img/store-nav.png" />
+              <img class="nav-link-image" src="../img/store-nav.png" />
             </a>
-            <a class="nav-link" href="about/about.html">
+            <a class="nav-link" href="../about/about.html">
               <h2 class="nav-link-label rubik-font">About</h2>
-              <img class="nav-link-image" src="img/about-scr.png" />
+              <img class="nav-link-image" src="../img/about-scr.png" />
             </a>
-            <a class="nav-link" href="contact/signup.html">
+            <a class="nav-link" href="../contact/signup.html">
               <h2 class="nav-link-label rubik-font">Contact</h2>
-              <img class="nav-link-image" src="img/about-nav.png" />
+              <img class="nav-link-image" src="../img/about-nav.png" />
             </a>
-            <a class="nav-link" href="team/team.html">
+            <a class="nav-link" href="../team/team.html">
               <h2 class="nav-link-label rubik-font">team</h2>
-              <img class="nav-link-image" src="img/jobs.jpg" />
+              <img class="nav-link-image" src="../img/jobs.jpg" />
             </a>
           </div>
         </div>
@@ -1180,7 +1170,7 @@ echo "user not logged in";
         </a>
         </div>
         <div class="userLogin">
-          <a class="loginInBtn" href="Registration/Login.php">Log in with email</a>
+          <a class="loginInBtn" href="../Registration/Login.php">Log in with email</a>
           <p>Dont have an account? <a href="">Sign Up</a></p>
         </div>
       </div>
@@ -1234,7 +1224,7 @@ echo "user not logged in";
         </a>
         </div>
         <div class="userLogin">
-          <a class="loginInBtn" href="Registration/Signup.php">Sign in with email</a>
+          <a class="loginInBtn" href="../Registration/Signup.php">Sign in with email</a>
           <p>Already have an account? <a href="Registration/Login.php">Login</a></p>
         </div>
       </div>

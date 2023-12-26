@@ -1,16 +1,5 @@
 <?php
 include_once("Registration/config.php");
-if(empty($_SESSION['email']))
-{
-echo "user not logged in";
-
-} else {
-  echo "user logged in";
-  echo $_SESSION["id"];
-  echo $_SESSION["email"];
-  echo $_SESSION["username"];
-}
-
 ?>
 <!DOCTYPE html>
 <html id="scrolltop" lang="en">
@@ -86,7 +75,7 @@ echo "user not logged in";
               <h2 id="active" class="nav-link-label rubik-font">Home</h2>
               <img class="nav-link-image" src="img/home-src.png" />
             </a>
-            <a class="nav-link" href="store/store.html">
+            <a class="nav-link" href="store/store.php">
               <h2 class="nav-link-label rubik-font">Store</h2>
               <img class="nav-link-image" src="img/store-nav.png" />
             </a>
@@ -306,7 +295,7 @@ echo "user not logged in";
                 Keep up with the hottest fashion designer all across the world.
                 Picked with love by our staff.
               </p>
-              <a class="main__button" href="store.html">SHOP ALL</a>
+              <a class="main__button" href="store.php">SHOP ALL</a>
             </div>
           </div>
           <div class="container carousel__container">
@@ -394,7 +383,7 @@ echo "user not logged in";
                 Missed a drop? dont worry we got you coverd. We refill our stock
                 every month.
               </p>
-              <a class="main__button" href="store.html">SHOP ALL</a>
+              <a class="main__button" href="store.php">SHOP ALL</a>
             </div>
           </div>
           <div class="container carousel__container">

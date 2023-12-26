@@ -1134,7 +1134,7 @@ body:has(.modal__container[aria-expanded="true"]) main {
   gap: 1.5rem;
 }
 .modal__title {
-  text-align: center;
+  text-align: left;
   color: rgb(136, 136, 136);
   text-transform: uppercase;
   letter-spacing: -0.04rem;
@@ -1185,8 +1185,8 @@ body:has(.modal__container[aria-expanded="true"]) main {
   position: absolute;
   top: -4px;
   left: -4px;
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid rgb(104, 104, 104);
   pointer-events: none;
@@ -1228,8 +1228,10 @@ input[type="radio"]#darkBlue {
   width: 1px;
 }
 .modal__payment__find-store {
-  display: flex;
-  justify-content: center;
+display: flex;
+}
+.modal__payment__find-store > * {
+  flex: 50%;
 }
 .final__payments-text {
   padding: 0.6875rem 1.5rem;

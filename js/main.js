@@ -13,48 +13,62 @@ navToggles.forEach((navToggle) => {
     }
   });
 });
-// LOGIN TOGGLE 
-let loginModal = document.querySelector(".loginModal");
-let logInBtn = document.querySelector(".btn2");
+document.addEventListener('DOMContentLoaded', function() {
+  // LOGIN TOGGLE 
+  let loginModal = document.querySelector(".loginModal");
+  let logInBtn = document.querySelector(".btn2");
 
-  logInBtn.addEventListener("click", () => {
-    const isOpened = loginModal.getAttribute("aria-expanded");
+  if (logInBtn) {
+      logInBtn.addEventListener("click", () => {
+          const isOpened = loginModal.getAttribute("aria-expanded");
 
-    if (isOpened == "false") {
-      loginModal.setAttribute("aria-expanded", "true");
-    } else {
-      loginModal.setAttribute("aria-expanded", "false");
-    }
-  });
-  loginModal.addEventListener("click", ()=> {
-    const isOpened = loginModal.getAttribute("aria-expanded");
-    if (isOpened == "true") {
-      loginModal.setAttribute("aria-expanded", "false");
-    } else {
-      loginModal.setAttribute("aria-expanded", "true");
-    }
-  });
-// SIGNUP toggle 
-let signInModal = document.querySelector(".signInModal");
-let signInBtn = document.querySelector(".btn3");
+          if (isOpened == "false") {
+              loginModal.setAttribute("aria-expanded", "true");
+          } else {
+              loginModal.setAttribute("aria-expanded", "false");
+          }
+      });
+  }
 
-signInBtn.addEventListener("click", () => {
-    const isOpened = signInModal.getAttribute("aria-expanded");
+  if (loginModal) {
+      loginModal.addEventListener("click", () => {
+          const isOpened = loginModal.getAttribute("aria-expanded");
+          if (isOpened == "true") {
+              loginModal.setAttribute("aria-expanded", "false");
+          } else {
+              loginModal.setAttribute("aria-expanded", "true");
+          }
+      });
+  }
 
-    if (isOpened == "false") {
-      signInModal.setAttribute("aria-expanded", "true");
-    } else {
-      signInModal.setAttribute("aria-expanded", "false");
-    }
-  });
-  signInModal.addEventListener("click", ()=> {
-    const isOpened = signInModal.getAttribute("aria-expanded");
-    if (isOpened == "true") {
-      signInModal.setAttribute("aria-expanded", "false");
-    } else {
-      signInModal.setAttribute("aria-expanded", "true");
-    }
-  });
+  // SIGNUP toggle 
+  let signInModal = document.querySelector(".signInModal");
+  let signInBtn = document.querySelector(".btn3");
+
+  if (signInBtn) {
+      signInBtn.addEventListener("click", () => {
+          const isOpened = signInModal.getAttribute("aria-expanded");
+
+          if (isOpened == "false") {
+              signInModal.setAttribute("aria-expanded", "true");
+          } else {
+              signInModal.setAttribute("aria-expanded", "false");
+          }
+      });
+  }
+
+  if (signInModal) {
+      signInModal.addEventListener("click", () => {
+          const isOpened = signInModal.getAttribute("aria-expanded");
+          if (isOpened == "true") {
+              signInModal.setAttribute("aria-expanded", "false");
+          } else {
+              signInModal.setAttribute("aria-expanded", "true");
+          }
+      });
+  }
+});
+
 // PASSWORD TOGGLE
 
 function passwordToggle() {

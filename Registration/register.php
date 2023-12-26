@@ -19,8 +19,7 @@
 		}
 		else
 		{
-			$sql = "SELECT email, username FROM users WHERE email=:email, username=:username";
-
+			$sql = "SELECT email, username FROM users WHERE email=:email AND username=:username";
 			$tempSQL = $conn->prepare($sql);
 			$tempSQL->bindParam(':email', $email);
 			$tempSQL->bindParam(':username', $username);

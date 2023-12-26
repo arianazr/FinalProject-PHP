@@ -1,17 +1,16 @@
 <?php
-include_once("Registration/config.php");
+include_once("../Registration/config.php");
 
 if(empty($_SESSION['email'])) {
-  header("Location: index.php");
+  header("Location: ../index.php");
 };
-
 $id = $_GET["id"];
-$sql = "SELECT * FROM users WHERE id=:id";
-$selectUsers = $conn->prepare($sql);
-$selectUsers->bindParam(':id', $id);
-$selectUsers->execute();
+$sql = "SELECT * FROM products WHERE id=:id";
+$selectCard = $conn->prepare($sql);
+$selectCard->bindParam(':id', $id);
+$selectCard->execute();
 
-$user_data = $selectUsers->fetch();
+$card_data = $selectCard->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +21,7 @@ $user_data = $selectUsers->fetch();
       src="https://kit.fontawesome.com/73603c0753.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -100,8 +99,8 @@ $user_data = $selectUsers->fetch();
     <div class="profile__wrapper">
         <div class="profile__left">
             <ul class="profile__nav">
-                <li class="main__button profile__listed prfactive"><a href="#">Profile</a></li>
-                <li class="main__button profile__listed"><a href="store/sell.php?id=<?= $_SESSION["id"] ?>">Sell Product</a></li>
+                <li class="main__button profile__listed"><a href="../profile.php?id=<?php echo $_SESSION["id"] ?>">Profile</a></li>
+                <li class="main__button profile__listed prfactive"><a href="#">Sell Product</a></li>
                 <li class="main__button profile__listed"><a href="#">Payments</a></li>
                 <li class="main__button profile__listed"><a href="#">Purchases</a></li>
                 <li class="main__button profile__listed"><a href="#">Payments</a></li>
@@ -109,15 +108,22 @@ $user_data = $selectUsers->fetch();
             </ul>
         </div>
         <div class="profile__right">
-            <form action="Registration/update.php" method="post" class="form-profile">
+            <form action="upload.php" method="post" class="form-profile" enctype="multipart/form-data">
             <div class="profile__wrapper-update">
-              <input type="text" class="profile__input" name="name" id="name" value="<?php echo $user_data["name"]?>">
-              <input type="text" class="profile__input" name="username" id="username" value="<?php echo $user_data["username"]?>">
-              <input type="text" class="profile__input" name="email" id="email" value="<?php echo $user_data["email"]?>">
-              <input type="text" class="profile__input" name="phone" id="phone" value="<?php echo $user_data["phone"]?>">
-              <input type="text" class="profile__input" name="address" id="address" value="<?php echo $user_data["address"]?>">
-  </div>
-              <button class="updateBtn" name="update">Update</button>
+            <input type="text" name="name" id="floatingInput" class="profile__input" placeholder="Product name">
+            <input type="text" name="size" id="floatingInput" class="profile__input" placeholder="Size">
+            <input type="text" name="color" id="floatingInput" class="profile__input" placeholder="Color">
+            <input type="text" name="kondition" id="floatingInput" class="profile__input" placeholder="Condition">
+            <select name="category_id" class="profile__input" required>
+              <option value="1">Tops</option>
+              <option value="2">Bottoms</option>
+              <option value="3">Footwear</option>
+              <option value="4">Accessories</option>
+            </select>
+            <input type="text" name="price" id="floatingInput" class="profile__input" placeholder="Price">
+            <input type="File" name="img" id="floatingInput" class="profile__input" placeholder="Photo">
+            </div>
+              <button class="updateBtn" name="submit">Submit</button>
             </form>
           </div>
         </div>
@@ -240,6 +246,6 @@ $user_data = $selectUsers->fetch();
       </footer>
 </main>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
