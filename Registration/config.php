@@ -15,6 +15,7 @@ try {
 function logoutUser() {
     session_unset();
     session_destroy();
+    header("Location: index.php");
 }
 function isUserLoggedIn() {
     return empty($_SESSION["email"]);

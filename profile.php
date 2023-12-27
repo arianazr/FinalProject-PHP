@@ -58,36 +58,10 @@ $user_data = $selectUsers->fetch();
 <body>
     <nav>
       <div class="nav__background"></div>
-          <a id="nav-toggle-btn" href="index.php" class="profileBtn">
+          <a id="nav-toggle-btn" href="http://localhost/ArianPHP/Final%20Project%20PHP/Final-Project-DS/" class="profileBtn">
           <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 16C15 15.2044 14.6839 14.4413 14.1213 13.8787C13.5587 13.3161 12.7957 13 12 13C11.2044 13 10.4413 13.3161 9.87868 13.8787C9.31607 14.4413 9 15.2043 9 16V20H4L4 10L8 6.5M12 3L20 10L20 20H15" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           <text class="hoverPOPUP">Home</text> 
         </a>
-      <div class="nav__wrapper" aria-expanded="false">
-        <div style="transform: none" id="transform">
-          <div id="nav-links">
-            <a class="nav-link" href="index.php">
-              <h2 id="active" class="nav-link-label rubik-font">Home</h2>
-              <img class="nav-link-image" src="img/home-src.png" />
-            </a>
-            <a class="nav-link" href="store/store.html">
-              <h2 class="nav-link-label rubik-font">Store</h2>
-              <img class="nav-link-image" src="img/store-nav.png" />
-            </a>
-            <a class="nav-link" href="about/about.html">
-              <h2 class="nav-link-label rubik-font">About</h2>
-              <img class="nav-link-image" src="img/about-scr.png" />
-            </a>
-            <a class="nav-link" href="contact/signup.html">
-              <h2 class="nav-link-label rubik-font">Contact</h2>
-              <img class="nav-link-image" src="img/about-nav.png" />
-            </a>
-            <a class="nav-link" href="team/team.html">
-              <h2 class="nav-link-label rubik-font">team</h2>
-              <img class="nav-link-image" src="img/jobs.jpg" />
-            </a>
-          </div>
-        </div>
-      </div>
     </nav>
 <main style="position:relative;">
 <div class="profile">
@@ -95,8 +69,9 @@ $user_data = $selectUsers->fetch();
     <div class="profile__title">
         <h1>ThriftOnline</h1>
         <h3>Profile</h3>
-        <div class="username"><span><?php echo $_SESSION["username"]?></span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
-        </div>
+          <div class="username"><span><?php echo $_SESSION["username"]?></span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
+      <a class="signout" href="signout.php" title="Sign out"><svg width="33px" height="33px" fill="#000000" viewBox="0 0 24 24" id="sign-out-left-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline id="primary" points="6 15 3 12 6 9" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></polyline><line id="primary-2" data-name="primary" x1="3" y1="12" x2="17" y2="12" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></line><path id="primary-3" data-name="primary" d="M10,8V5a1,1,0,0,1,1-1h9a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H11a1,1,0,0,1-1-1V16" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></path></g></svg> </a>  
+      </div>
     <div class="profile__wrapper">
         <div class="profile__left">
             <ul class="profile__nav">

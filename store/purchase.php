@@ -151,7 +151,7 @@ $user_data = $selectUsers->fetch();
                 </div>
                 <div class="modal__payment__find-store">
                   <h2 class="final__payments-text">FIND STORE</h2>
-                  <h2 class="final__payments-text">PURCHASE</h2>
+                  <a class="final__payments-text" href="confirmBuy.php?id=<?php echo $user_data["id"]?>">PURCHASE</a>
                 </div>
                 <div class="seller__container">
                   Write a message to

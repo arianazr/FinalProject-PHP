@@ -79,10 +79,10 @@ accesoriesBtn.addEventListener("click", () => {
   headerallClothesWrapper.style.display = "inline-flex";
 });
 
-topsBtn.addEventListener("click", filterCards.bind(this, "tops"));
-bottomsBtn.addEventListener("click", filterCards.bind(this, "bottoms"));
-footwearBtn.addEventListener("click", filterCards.bind(this, "footwear"));
-accesoriesBtn.addEventListener("click", filterCards.bind(this, "accessories"));
+topsBtn.addEventListener("click", filterCards.bind(this, "1"));
+bottomsBtn.addEventListener("click", filterCards.bind(this, "2"));
+footwearBtn.addEventListener("click", filterCards.bind(this, "3"));
+accesoriesBtn.addEventListener("click", filterCards.bind(this, "4"));
 
 // filter the cards based on their category
 function filterCards(category) {

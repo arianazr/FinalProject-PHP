@@ -1094,6 +1094,7 @@ margin:1rem 0rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .profile__title > h1 {
+  flex: 1;
   font-size: 2.2rem;
 }
 .profile__title > h3 {
@@ -1106,6 +1107,12 @@ right: 49%;
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
+  padding-right: 1rem;
+}
+.signout {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 }
 .profile__wrapper {
   display: flex;
@@ -1186,6 +1193,19 @@ transition: outline-offset 350ms;
 }
 .updateBtn:hover {
   outline-offset: -5px;
+}
+.container-prchs {
+  display: flex;
+  flex-direction: row;
+}
+.container-prchs > * {
+  flex: 50%;
+}
+.container-right {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap);
+  gap: calc(var(--gap) / 2);
 }
 @media (max-width: 1000px) {
   .carousel__row {

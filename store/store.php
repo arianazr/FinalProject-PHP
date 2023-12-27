@@ -981,7 +981,7 @@ include_once("../Registration/config.php");
 
 <div class="card__container-N">
 <?php foreach($users as $user) { ?>
-     <a href="purchase.php?id=<?= $user["id"];?>" id="bottoms" class="card">
+     <a href="purchase.php?id=<?= $user["id"];?>" id="<?= $user["category_id"] ?>" class="card">
             <div class="card__img__container">
               <div class="card__img__wrapper">
                 <img
