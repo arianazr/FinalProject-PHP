@@ -967,21 +967,21 @@ include_once("../Registration/config.php");
         </ul>
       </div>
       <div class="container carousel__container">
-      <?php 
+       <?php 
 
-  include_once('../Registration/config.php');
+          include_once('../Registration/config.php');
 
-      $getUsers = $conn->prepare("SELECT * FROM products");
+        $getUsers = $conn->prepare("SELECT * FROM products");
 
-      $getUsers->execute();
+          $getUsers->execute();
 
-      $users = $getUsers->fetchAll();
+          $users = $getUsers->fetchAll();
 
-?>
+        ?>
 
-<div class="card__container-N">
-<?php foreach($users as $user) { ?>
-     <a href="purchase.php?id=<?= $user["id"];?>" id="<?= $user["category_id"] ?>" class="card">
+       <div class="card__container-N">
+        <?php foreach($users as $user) { ?>
+          <a href="purchase.php?id=<?= $user["id"];?>" class="card">
             <div class="card__img__container">
               <div class="card__img__wrapper">
                 <img
@@ -996,12 +996,12 @@ include_once("../Registration/config.php");
               <div class="card__price">3 hour ago <span>·</span> <?= $user['Price'] ?></div>
               <div class="card__label"><?= $user['name'] ?></div>
               <div class="card__details">
-                Shipping <br />
+                Shipping\ <br />
                 +3 colors <br />
                 Denim, Kintted
               </div>
-            </div>
-</a>
+            </div> 
+              </a>
           <?php };?>
         </div>
       </div>
