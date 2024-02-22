@@ -7,9 +7,10 @@
     <title>Sign Up | ThriftOnline</title>
 </head>
 <body>
-    <div class="container" style="padding:5rem 3rem 3rem 3rem;">
-        <h1>Sign Up</h1>
-        <form action="register.php" method="post">
+    <div class="container">
+    <div class="loginCover"></div>
+    <form style="padding: 7rem 7rem 0rem 7rem;" action="register.php" method="post">
+        <h1 style="font-size:3rem;top: 3.5rem;">Get Started Now</h1>
             <input type="text" name="name" id="name" placeholder="Name">
             <input type="text" name="username" id="username" placeholder="Username">
             <input type="email" name="email" id="email" placeholder="Email">

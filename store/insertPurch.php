@@ -7,7 +7,7 @@ if(isset($_POST["submit"])) {
     if (empty($user_id) || empty($product_id) || empty($amount)) {
         echo "You need to fill all the filds";
         sleep(2);
-        header("Location:confirmPurch.php");
+        header("Location:confirmBuy.php");
     } else {
         $sql = "INSERT INTO orders (user_id,product_id,amount) VALUES (:user_id,:product_id,:amount)";
         $insertSql = $conn->prepare($sql);

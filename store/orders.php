@@ -2,15 +2,16 @@
 include_once("../Registration/config.php");
 
 if(empty($_SESSION['email'])) {
-  header("Location: ../index.php");
+  header("Location: index.php");
 };
-$id = $_GET["id"];
-$sql = "SELECT * FROM products WHERE id=:id";
-$selectCard = $conn->prepare($sql);
-$selectCard->bindParam(':id', $id);
-$selectCard->execute();
 
-$card_data = $selectCard->fetch();
+$id = $_GET["id"];
+$sql = "SELECT * FROM users WHERE id=:id";
+$selectUsers = $conn->prepare($sql);
+$selectUsers->bindParam(':id', $id);
+$selectUsers->execute();
+
+$user_data = $selectUsers->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +23,7 @@ $card_data = $selectCard->fetch();
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="orders.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,32 +63,6 @@ $card_data = $selectCard->fetch();
           <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 16C15 15.2044 14.6839 14.4413 14.1213 13.8787C13.5587 13.3161 12.7957 13 12 13C11.2044 13 10.4413 13.3161 9.87868 13.8787C9.31607 14.4413 9 15.2043 9 16V20H4L4 10L8 6.5M12 3L20 10L20 20H15" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           <text class="hoverPOPUP">Home</text> 
         </a>
-      <div class="nav__wrapper" aria-expanded="false">
-        <div style="transform: none" id="transform">
-          <div id="nav-links">
-            <a class="nav-link" href="index.php">
-              <h2 id="active" class="nav-link-label rubik-font">Home</h2>
-              <img class="nav-link-image" src="img/home-src.png" />
-            </a>
-            <a class="nav-link" href="store/store.html">
-              <h2 class="nav-link-label rubik-font">Store</h2>
-              <img class="nav-link-image" src="img/store-nav.png" />
-            </a>
-            <a class="nav-link" href="about/about.html">
-              <h2 class="nav-link-label rubik-font">About</h2>
-              <img class="nav-link-image" src="img/about-scr.png" />
-            </a>
-            <a class="nav-link" href="contact/signup.html">
-              <h2 class="nav-link-label rubik-font">Contact</h2>
-              <img class="nav-link-image" src="img/about-nav.png" />
-            </a>
-            <a class="nav-link" href="team/team.html">
-              <h2 class="nav-link-label rubik-font">team</h2>
-              <img class="nav-link-image" src="img/jobs.jpg" />
-            </a>
-          </div>
-        </div>
-      </div>
     </nav>
 <main style="position:relative;">
 <div class="profile">
@@ -94,35 +70,61 @@ $card_data = $selectCard->fetch();
     <div class="profile__title">
         <h1>ThriftOnline</h1>
         <h3>Profile</h3>
-        <div class="username"><span><?php echo $_SESSION["username"]?></span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
-        </div>
+          <div class="username"><span><?php echo $_SESSION["username"]?></span><svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 8.5C14.5 9.88071 13.3807 11 12 11C10.6193 11 9.5 9.88071 9.5 8.5C9.5 7.11929 10.6193 6 12 6C13.3807 6 14.5 7.11929 14.5 8.5Z" fill="#000000"></path> <path d="M15.5812 16H8.50626C8.09309 16 7.87415 15.5411 8.15916 15.242C9.00598 14.3533 10.5593 13 12.1667 13C13.7899 13 15.2046 14.3801 15.947 15.2681C16.2011 15.5721 15.9774 16 15.5812 16Z" fill="#000000" stroke="#000000" stroke-width="0.336" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="0.336"></circle> </g></svg></div>
+      <a class="signout" href="signout.php" title="Sign out"><svg width="33px" height="33px" fill="#000000" viewBox="0 0 24 24" id="sign-out-left-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline id="primary" points="6 15 3 12 6 9" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></polyline><line id="primary-2" data-name="primary" x1="3" y1="12" x2="17" y2="12" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></line><path id="primary-3" data-name="primary" d="M10,8V5a1,1,0,0,1,1-1h9a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H11a1,1,0,0,1-1-1V16" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:0.552;"></path></g></svg> </a>  
+      </div>
     <div class="profile__wrapper">
         <div class="profile__left">
             <ul class="profile__nav">
                 <li class="main__button profile__listed"><a href="http://localhost/Finals/FinalProject-PHP/profile.php?id=<?= $_SESSION['id'] ?>">Profile</a></li>
-                <li class="main__button profile__listed prfactive"><a href="#">Sell Product</a></li>
+                <li class="main__button profile__listed"><a href="http://localhost/Finals/FinalProject-PHP/store/sell.php?id=<?=$_SESSION['id']?>">Sell Product</a></li>
                 <li class="main__button profile__listed"><a href="#">Payments</a></li>
-                <li class="main__button profile__listed"><a href="http://localhost/Finals/FinalProject-PHP/store/orders.php?id=<?= $_SESSION['id'] ?>">Your orders</a></li>
+                <li class="main__button profile__listed prfactive"><a href="orders.php?id=<?= $_SESSION["id"] ?>">Your orders</a></li>
                 <li class="main__button profile__listed"><a href="#">Devices</a></li>
             </ul>
         </div>
         <div class="profile__right">
-            <form action="upload.php" method="post" class="form-profile" enctype="multipart/form-data">
-            <div class="profile__wrapper-update">
-            <input type="text" name="name" id="floatingInput" class="profile__input" placeholder="Product name">
-            <input type="text" name="size" id="floatingInput" class="profile__input" placeholder="Size">
-            <input type="text" name="color" id="floatingInput" class="profile__input" placeholder="Color">
-            <input type="text" name="kondition" id="floatingInput" class="profile__input" placeholder="Condition">
-            <select name="category_id" class="profile__input" required>
-              <option value="1">Tops</option>
-              <option value="2">Bottoms</option>
-              <option value="3">Footwear</option>
-              <option value="4">Accessories</option>
-            </select>
-            <input type="text" name="price" id="floatingInput" class="profile__input" placeholder="Price">
-            <input type="File" name="img" id="floatingInput" class="profile__input" placeholder="Photo">
+            <form action="Registration/update.php" method="post" class="form-profile">
+
+            <?php
+include_once("../Registration/config.php");  // Include your database connection details
+
+// Check if the session is empty, redirect if needed
+if (empty($_SESSION['email'])) {
+    header("Location: index.php");
+    exit();
+}
+
+
+$session_id = $_SESSION["id"];
+
+$sql_orders = "SELECT products.img, products.Price, orders.amount
+               FROM orders
+               INNER JOIN products ON orders.product_id = products.id
+               WHERE orders.user_id = :user_id";
+$stmt_orders = $conn->prepare($sql_orders);
+$stmt_orders->bindParam(":user_id", $session_id);
+$stmt_orders->execute();
+$result_orders = $stmt_orders->fetchAll();
+
+
+?>
+            <?php foreach ($result_orders as $order) { ?>
+           <div class="card">
+            <div class="card__img">
+              <img src="<?= $order['img'] ?>" class="card__IMAGE">
             </div>
-              <button style="margin-left: 2rem;" class="orderBtn" name="submit">Submit</button>
+              <div class="card__description">
+            <ul class="desc__list">
+                <li class="desc__listed-items">Amount: <?= $order['amount'] ?></li>
+                <li class="desc__listed-items"><?php
+                 $priceWithoutSymbol = (float) str_replace(['$', ','], '', $order['Price']);
+                 echo "Price: $" . ($priceWithoutSymbol * $order['amount']) . "<br>";
+                ?></li>
+                  </ul>
+                </div>
+              </div>
+            <?php } ?>
             </form>
           </div>
         </div>
@@ -245,6 +247,6 @@ $card_data = $selectCard->fetch();
       </footer>
 </main>
 
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

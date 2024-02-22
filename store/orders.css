@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input,
+form,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-silver: #c0c0c0;
+    --color-green: #4e6c50;
+    --color-orange: #c38133;
+    --color-lightgray: #999;
+    --color-lightblue: #adbbe3;
+    --color-blue: #3c4cc7;
+    --color-offwhite: #f2efe6;
+    --gap: 2.125rem;
+}
+.card {
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+.form-profile {
+    padding: 3rem;
+}
+.card__IMAGE {
+    height: 18vw;
+    width: 100vw;
+    object-fit: cover;
+    transition: transform 350ms;
+    max-width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: scale 350ms;
+}
+.card__IMAGE:hover {
+    scale: 1.025;
+}
+.desc__list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--color-black);
+}
+.desc__listed-items {
+    font-size: 1rem;
+}
+.desc__listed-items:nth-of-type(1) {
+    flex: 1;
+}
+.desc__listed-items:nth-of-type(3) {
+    cursor: pointer;
+    color: red;
+}
+.form-profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}

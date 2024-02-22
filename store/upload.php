@@ -46,19 +46,21 @@ if(isset($_POST["submit"])) {
     $color = $_POST["color"];
     $kondition = $_POST["kondition"];
     $category_id = $_POST["category_id"];
+    $price = $_POST["price"];
     $img = $target_file;
-    if (empty($name) || empty($size) || empty($color) || empty($kondition) || empty($category_id) || empty($img)) {
+    if (empty($name) || empty($size) || empty($color) || empty($kondition) || empty($category_id) ||empty($price) || empty($img)) {
         echo "You need to fill all the filds";
         sleep(2);
         header("Location:sell.php");
     } else {
-        $sql = "INSERT INTO products (name,size,color,kondition,category_id,img) VALUES (:name,:size,:color,:kondition,:category_id,:img)";
+        $sql = "INSERT INTO products (name,size,color,kondition,category_id,price,img) VALUES (:name,:size,:color,:kondition,:category_id,:price,:img)";
         $insertSql = $conn->prepare($sql);
         $insertSql->bindParam(":name", $name);
         $insertSql->bindParam(":size", $size);
         $insertSql->bindParam(":color", $color);
         $insertSql->bindParam(":kondition", $kondition);
         $insertSql->bindParam(":category_id", $category_id);
+        $insertSql->bindParam(":price", $price);
         $insertSql->bindParam(":img", $img);
         $insertSql->execute();
     };

@@ -62,19 +62,19 @@ include_once("../Registration/config.php");
       <div class="nav__wrapper" aria-expanded="false">
         <div style="transform: none" id="transform">
           <div id="nav-links">
-            <a class="nav-link" href="index.php">
-              <h2 id="active" class="nav-link-label rubik-font">Home</h2>
+            <a class="nav-link" href="../index.php">
+              <h2  class="nav-link-label rubik-font">Home</h2>
               <img class="nav-link-image" src="../img/home-src.png" />
             </a>
             <a class="nav-link" href="#">
-              <h2 class="nav-link-label rubik-font">Store</h2>
+              <h2 id="active" class="nav-link-label rubik-font">Store</h2>
               <img class="nav-link-image" src="../img/store-nav.png" />
             </a>
-            <a class="nav-link" href="../about/about.html">
+            <a class="nav-link" href="../about/about.php">
               <h2 class="nav-link-label rubik-font">About</h2>
               <img class="nav-link-image" src="../img/about-scr.png" />
             </a>
-            <a class="nav-link" href="../contact/signup.html">
+            <a class="nav-link" href="../contact/contact.php">
               <h2 class="nav-link-label rubik-font">Contact</h2>
               <img class="nav-link-image" src="../img/about-nav.png" />
             </a>
@@ -981,7 +981,7 @@ include_once("../Registration/config.php");
 
        <div class="card__container-N">
         <?php foreach($users as $user) { ?>
-          <a href="purchase.php?id=<?= $user["id"];?>" class="card">
+          <a href="purchase.php?id=<?= $user["id"];?>" id="<?= $user["category_id"];?>" class="card">
             <div class="card__img__container">
               <div class="card__img__wrapper">
                 <img
@@ -996,7 +996,7 @@ include_once("../Registration/config.php");
               <div class="card__price">3 hour ago <span>·</span> <?= $user['Price'] ?></div>
               <div class="card__label"><?= $user['name'] ?></div>
               <div class="card__details">
-                Shipping\ <br />
+                Shipping <br />
                 +3 colors <br />
                 Denim, Kintted
               </div>
@@ -1006,7 +1006,7 @@ include_once("../Registration/config.php");
         </div>
       </div>
 
-      <footer>
+      <footer style="margin: 0;">
         <div class="footer__left">
           <div class="footer__container-h3">
             <h3>We have high standars for our emails too.</h3>

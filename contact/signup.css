@@ -104,6 +104,18 @@ body::-webkit-scrollbar {
 #nav-toggle {
   display: none;
 }
+.profileBtn {
+  left: 4rem !important; 
+  width: 4.789rem !important;
+}
+button.btn2 {
+  left: 4rem !important; 
+  width: 4.789rem !important;
+}
+button.btn3 {
+  left: 10.5rem !important; 
+  width: 4.789rem !important;
+}
 @keyframes fade-in {
   0% {
     opacity: 0;

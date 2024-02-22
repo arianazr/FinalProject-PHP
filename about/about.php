@@ -1,10 +1,14 @@
+<?php
+include_once("../Registration/config.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="about.css" />
     <script
       src="https://kit.fontawesome.com/73603c0753.js"
       crossorigin="anonymous"
@@ -24,39 +28,50 @@
       href="../img/favicon-32x32.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Sign In | ThriftOnline</title>
+    <title>About | ThriftOnline</title>
   </head>
-  <body id="bodyoverflow">
+  <body>
+    <header>
+      <h1 class="page-logo">To.</h1>
+    </header>
     <nav>
       <div class="nav__background"></div>
         <button id="nav-toggle-btn" class="btn">
           <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H14M4 18H9" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
       <text class="hoverPOPUP">Menu</text>
         </button>
-      <button id="nav-toggle-btn" class="btn2">
-        <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <text class="hoverPOPUP">Login</text> 
+        <?php if(empty($_SESSION["email"])) {?>
+         
+          <button id="nav-toggle-btn" class="btn2">
+            <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <text class="hoverPOPUP">Login</text> 
       </button>
       <button id="nav-toggle-btn" class="btn3">
         <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
         <text class="hoverPOPUP">Sign Up</text>
       </button>
+        <?php } else {?>
+          <a id="nav-toggle-btn" href="../profile.php?id=<?= $_SESSION["id"];?>" class="profileBtn">
+            <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <text class="hoverPOPUP"><?php echo $_SESSION["username"];?></text> 
+        </a>
+      <?php }?>
       <div class="nav__wrapper" aria-expanded="false">
         <div style="transform: none" id="transform">
           <div id="nav-links">
-            <a class="nav-link" href="../index.html">
-              <h2 id="active" class="nav-link-label rubik-font">Home</h2>
+            <a class="nav-link" href="../index.php">
+              <h2 class="nav-link-label rubik-font">Home</h2>
               <img class="nav-link-image" src="../img/home-src.png" />
             </a>
-            <a class="nav-link" href="../store/store.html">
+            <a class="nav-link" href="../store/store.php">
               <h2 class="nav-link-label rubik-font">Store</h2>
               <img class="nav-link-image" src="../img/store-nav.png" />
             </a>
-            <a class="nav-link" href="../about/about.html">
-              <h2 class="nav-link-label rubik-font">About</h2>
+            <a class="nav-link" href="#">
+              <h2 id="active" class="nav-link-label rubik-font">About</h2>
               <img class="nav-link-image" src="../img/about-scr.png" />
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="../contact/contact.php">
               <h2 class="nav-link-label rubik-font">Contact</h2>
               <img class="nav-link-image" src="../img/about-nav.png" />
             </a>
@@ -69,43 +84,158 @@
       </div>
     </nav>
     <main>
-      <section>
-<div class="contact__container">
-  <div class="left"></div>
-  <div class="right">
-  <ul class="contact__list">
-    <li class="listed__items"><h1>Get in touch</h1></li>
-    <li class="listed__items">
-      <h3>Write Us</h3>
-    <p>thriftOnline@gmail.com</p>
-    </li>
-    <li class="listed__items">
-      <h3>Call us</h3>
-      <p>+389 (0)75 345 521</p>
-    </li>
-    <li class="listed__items">
-      <h3>Join Us</h3>
-      <p>join.thriftOnline.com</p>
-    </li>
-    <li class="listed__items">
-      <h3>Visit us</h3>
-      <p>
-        Baarsjesweg 285-286 | 1058 AE Amsterdam
-      </p>
-    </li>
-    <li class="listed__items">
-      <h3>Follow Us</h3>
-      <ul class="socials__list">
-        <li class="socials__listed-items">Facebook</li>
-        <li class="socials__listed-items">Instagram</li>
-        <li class="socials__listed-items">Twitter</li>
-        <li class="socials__listed-items">LinkedIn</li>
-      </ul>
-    </li>
-  </ul>
-</div>
-</div>
-      </section>
+      <div class="about__hero">
+        <div class="about__hero__images-container">
+          <img src="../img/header3.jpg" alt="" class="about__hero-imgs" />
+          <img src="../img/header6.jpg" alt="" class="about__hero-imgs" />
+          <img src="../img/header7.jpg" alt="" class="about__hero-imgs" />
+          <img src="../img/header8.jpg" alt="" class="about__hero-imgs" />
+        </div>
+        <div class="about__hero-container">
+          <h1 class="about__hero-title">About us</h1>
+          <h1 style="margin-bottom: 2rem" class="about__hero-title">
+            Who we are
+          </h1>
+          <p class="about__hero-text">
+            ThriftOnline is the one-stop destination for buying, selling and
+            exploring menswear and womenswear.
+          </p>
+        </div>
+      </div>
+      <div class="main">
+        <div class="image-with-text">
+          <div class="image__container image"></div>
+          <div class="text__container">
+            <h1>The Best Selection, at the Best Prices</h1>
+            <p>
+              Browse our marketplace for incredible new and used clothing that
+              you can’t find anywhere else. We curate the largest men’s fashion
+              marketplace, with new products arriving every day. Grailed, with
+              help from community, ensures all items are authentic. If anything
+              goes wrong, every transaction conducted through Grailed with
+              PayPal is eligible for a full refund.
+            </p>
+            <div class="button__container">
+              <button class="main__button">Browse the shop</button
+              ><button class="main__button">Buyer protection</button>
+            </div>
+          </div>
+        </div>
+        <div class="image-with-text">
+          <div class="image__container image2"></div>
+          <div class="text__container">
+            <h1>Make Money From Your Closet</h1>
+            <p>
+              Your closet is valuable. Flip your wardrobe on Grailed and find
+              like-minded buyers from within our community for your clothing.
+              Listing an item is always free and our commission rates are the
+              lowest in the game. As with buying, sellers who transact through
+              Grailed with PayPal are protected!
+            </p>
+            <div class="button__container">
+              <button class="main__button">Sell an item</button
+              ><button class="main__button">Seller protection</button>
+            </div>
+          </div>
+        </div>
+        <div class="commission__fee-bg">
+          <div class="commission__fee">
+            <h1
+              style="
+                font-size: 1.55rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                line-height: 0.95;
+              "
+            >
+              Free for Buyers, Low Commission Fee for Sellers
+            </h1>
+            <div class="commission__fee-flex">
+              <div class="commission__fee-box">9%</div>
+              <p>ThriftOnline Commission Fee</p>
+            </div>
+            <p>
+              Post any item for free. ThriftOnline only charges a commission
+              when your item sells.
+            </p>
+            <p>
+              Does ThriftOnline charge a payment processing fee?
+              <a href="#learn">Learn more</a>
+            </p>
+          </div>
+        </div>
+        <div class="image-with-text">
+          <div class="image__container image3"></div>
+          <div class="text__container">
+            <h1>Browse, Buy, Sell on the Go</h1>
+            <p>
+              The Grailed app lets you shop incredible pieces and sell your
+              personal archive where you are. Get instant notifications on price
+              drops, messages, and more.
+            </p>
+            <div class="button__container">
+              <button class="main__button">DOWNLOAD</button>
+            </div>
+          </div>
+        </div>
+        <div class="image-with-text">
+          <div class="image__container image4"></div>
+          <div class="text__container">
+            <h1>Shop, Study, Stay in the Know</h1>
+            <p>
+              Dry Clean Only, our exclusive editorial platform, provides unique
+              perspective on designers, drops and more. From designer archives
+              to celebrity closet sales, it’s your springboard to shop the best
+              pieces on the planet.
+            </p>
+            <div class="button__container">
+              <button class="main__button">Read our leatest articles</button>
+            </div>
+          </div>
+        </div>
+        <div class="be-social__container-bg">
+          <div class="be-social__container">
+            <h1>Be Social</h1>
+            <p>
+              Follow us on Instagram and Twitter to keep up on the biggest drops
+              and best pieces. Get inspired by our community who love to share
+              their style.
+            </p>
+            <div class="button2__container">
+              <button class="main__button">INSTAGRAM</button
+              ><button class="main__button">TWITTER</button>
+            </div>
+          </div>
+        </div>
+        <div class="image-with-text">
+          <div class="image__container image5"></div>
+          <div class="text__container">
+            <h1>Join the Team</h1>
+            <p>
+              We are always looking for talented individuals to join our
+              NYC-based team. Our team is full of people who are passionate
+              about fashion and committed to improving our community
+              marketplace.
+            </p>
+            <div class="button__container">
+              <button class="main__button">Availabel positions</button>
+            </div>
+          </div>
+        </div>
+        <div class="be-social__container-bg be-social__container-bg2">
+          <div class="be-social__container">
+            <h1>More Questions?</h1>
+            <p>
+              We’ve got answers. Visit our Help Section for our most Frequently
+              Asked Questions, detailed info on how ThriftOnline works, or you
+              can get in touch directly with our Community Support Team.
+            </p>
+            <div class="button2__container">
+              <button class="main__button">visit the help center</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <footer>
         <div class="footer__left">
           <div class="footer__container-h3">
@@ -330,6 +460,5 @@
       </div>
     </div>
     <script src="../js/main.js"></script>
-    <script src="../js/contact.js"></script>
   </body>
 </html>

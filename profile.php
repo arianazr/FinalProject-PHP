@@ -16,6 +16,7 @@ $user_data = $selectUsers->fetch();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="http://localhost/Finals/FinalProject-PHP/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script
@@ -58,7 +59,7 @@ $user_data = $selectUsers->fetch();
 <body>
     <nav>
       <div class="nav__background"></div>
-          <a id="nav-toggle-btn" href="http://localhost/ArianPHP/Final%20Project%20PHP/Final-Project-DS/" class="profileBtn">
+          <a id="nav-toggle-btn" href="http://localhost/Finals/FinalProject-PHP/" class="profileBtn">
           <svg width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 16C15 15.2044 14.6839 14.4413 14.1213 13.8787C13.5587 13.3161 12.7957 13 12 13C11.2044 13 10.4413 13.3161 9.87868 13.8787C9.31607 14.4413 9 15.2043 9 16V20H4L4 10L8 6.5M12 3L20 10L20 20H15" stroke="#000000" stroke-width="0.36" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           <text class="hoverPOPUP">Home</text> 
         </a>
@@ -78,21 +79,25 @@ $user_data = $selectUsers->fetch();
                 <li class="main__button profile__listed prfactive"><a href="#">Profile</a></li>
                 <li class="main__button profile__listed"><a href="store/sell.php?id=<?= $_SESSION["id"] ?>">Sell Product</a></li>
                 <li class="main__button profile__listed"><a href="#">Payments</a></li>
-                <li class="main__button profile__listed"><a href="#">Purchases</a></li>
-                <li class="main__button profile__listed"><a href="#">Payments</a></li>
+                <li class="main__button profile__listed"><a href="store/orders.php?id=<?= $_SESSION["id"] ?>">Your orders</a></li>
                 <li class="main__button profile__listed"><a href="#">Devices</a></li>
             </ul>
         </div>
         <div class="profile__right">
             <form action="Registration/update.php" method="post" class="form-profile">
             <div class="profile__wrapper-update">
+              <label for="name">Name</label>
               <input type="text" class="profile__input" name="name" id="name" value="<?php echo $user_data["name"]?>">
+              <label for="username">Username</label>
               <input type="text" class="profile__input" name="username" id="username" value="<?php echo $user_data["username"]?>">
+              <label for="email">Email</label>
               <input type="text" class="profile__input" name="email" id="email" value="<?php echo $user_data["email"]?>">
+              <label for="phone">Phone</label>
               <input type="text" class="profile__input" name="phone" id="phone" value="<?php echo $user_data["phone"]?>">
+              <label for="address">Address</label>
               <input type="text" class="profile__input" name="address" id="address" value="<?php echo $user_data["address"]?>">
   </div>
-              <button class="updateBtn" name="update">Update</button>
+              <button style="margin-left:2rem;" class="orderBtn" name="update">Update</button>
             </form>
           </div>
         </div>

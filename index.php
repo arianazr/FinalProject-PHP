@@ -79,11 +79,11 @@ include_once("Registration/config.php");
               <h2 class="nav-link-label rubik-font">Store</h2>
               <img class="nav-link-image" src="img/store-nav.png" />
             </a>
-            <a class="nav-link" href="about/about.html">
+            <a class="nav-link" href="about/about.php">
               <h2 class="nav-link-label rubik-font">About</h2>
               <img class="nav-link-image" src="img/about-scr.png" />
             </a>
-            <a class="nav-link" href="contact/signup.html">
+            <a class="nav-link" href="contact/contact.php">
               <h2 class="nav-link-label rubik-font">Contact</h2>
               <img class="nav-link-image" src="img/about-nav.png" />
             </a>
