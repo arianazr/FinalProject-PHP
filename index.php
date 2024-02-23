@@ -295,7 +295,7 @@ include_once("Registration/config.php");
                 Keep up with the hottest fashion designer all across the world.
                 Picked with love by our staff.
               </p>
-              <a class="main__button" href="store.php">SHOP ALL</a>
+              <a class="main__button" href="http://localhost/Finals/FinalProject-PHP/store/store.php">SHOP ALL</a>
             </div>
           </div>
           <div class="container carousel__container">
@@ -383,7 +383,7 @@ include_once("Registration/config.php");
                 Missed a drop? dont worry we got you coverd. We refill our stock
                 every month.
               </p>
-              <a class="main__button" href="store.php">SHOP ALL</a>
+              <a class="main__button" href="http://localhost/Finals/FinalProject-PHP/store/store.php">SHOP ALL</a>
             </div>
           </div>
           <div class="container carousel__container">
@@ -471,7 +471,7 @@ include_once("Registration/config.php");
                 We believe our industry is blinded by numbers. While buying
                 decisions are based on emotion.
               </p>
-              <a class="main__button" href="signup.html">SHARE YOUR OPINION</a>
+              <a class="main__button" href="http://localhost/Finals/FinalProject-PHP/contact/contact.php">SHARE YOUR OPINION</a>
             </div>
           </div>
           <div class="container carousel__container">

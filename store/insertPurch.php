@@ -15,6 +15,8 @@ if(isset($_POST["submit"])) {
         $insertSql->bindParam(":product_id", $product_id);
         $insertSql->bindParam(":amount", $amount);
         $insertSql->execute();
+
+        header("Location:http://localhost/Finals/FinalProject-PHP/store/store.php");
     };
 };
 ?>

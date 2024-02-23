@@ -672,7 +672,7 @@ footer {
   width: 100%;
 }
 .footer__bottom-container {
-  padding: 2vw 8px;
+  padding: 1vw 8px;
   border-top: 1px solid #000;
   display: flex;
 }

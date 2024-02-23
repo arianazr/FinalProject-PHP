@@ -14,6 +14,7 @@
             <input type="text" name="email" id="email" placeholder="Email">
             <input type="password" name="password" id="password" placeholder="Password">
             <p>Forgot your password? <a href="">Change</a></p>
+            <p>Don't have an account? <a href="http://localhost/Finals/FinalProject-PHP/Registration/Signup.php">Create one now</a></p>
             <button class="loginInBtn" name="submit" type="submit">Login</button>
         </form>    
     </div>

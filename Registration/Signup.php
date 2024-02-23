@@ -17,7 +17,7 @@
             <input type="text" name="phone" id="phone" placeholder="Phone">
             <input type="text" name="address" id="address" placeholder="Address">
             <input type="password" name="password" id="password" placeholder="Password">
-            <p>Dont have an account? <a href="Login.php">Login</a></p>
+            <p>Already have an account? <a href="http://localhost/Finals/FinalProject-PHP/Registration/Login.php">Login</a></p>
             <button class="loginInBtn" type="submit" name="submit">Sing Up</button>
         </form>    
     </div>

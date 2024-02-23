@@ -87,35 +87,40 @@ $user_data = $selectUsers->fetch();
             <form action="Registration/update.php" method="post" class="form-profile">
 
             <?php
-include_once("../Registration/config.php");  // Include your database connection details
-
-// Check if the session is empty, redirect if needed
-if (empty($_SESSION['email'])) {
-    header("Location: index.php");
-    exit();
-}
+              include_once("../Registration/config.php"); 
 
 
-$session_id = $_SESSION["id"];
+              if (empty($_SESSION['email'])) {
+              header("Location: index.php");
+              exit();
+              }
 
-$sql_orders = "SELECT products.img, products.Price, orders.amount
+
+               $session_id = $_SESSION["id"];
+
+               $sql_orders = "SELECT products.kondition, products.name, products.img, products.Price, orders.amount, orders.id
                FROM orders
                INNER JOIN products ON orders.product_id = products.id
                WHERE orders.user_id = :user_id";
-$stmt_orders = $conn->prepare($sql_orders);
-$stmt_orders->bindParam(":user_id", $session_id);
-$stmt_orders->execute();
-$result_orders = $stmt_orders->fetchAll();
+               $stmt_orders = $conn->prepare($sql_orders);
+               $stmt_orders->bindParam(":user_id", $session_id);
+               $stmt_orders->execute();
+               $result_orders = $stmt_orders->fetchAll();
 
 
-?>
-            <?php foreach ($result_orders as $order) { ?>
+            ?>  
+            <?php
+            if (count($result_orders) === 0) {
+              echo '<p class="ordersTEXT">No orders yet :(</p>';
+          } else {
+            foreach ($result_orders as $order) { ?>
            <div class="card">
-            <div class="card__img">
-              <img src="<?= $order['img'] ?>" class="card__IMAGE">
-            </div>
+             <div class="card__img">
+               <img src="<?= $order['img'] ?>" class="card__IMAGE">
+              </div>
               <div class="card__description">
-            <ul class="desc__list">
+                <ul class="desc__list">
+                <li class="desc__listed-items"><a class="cancelBtn" href="cancelOrder.php?order_id=<?php echo $order['id']; ?>">Cancel</a></li>
                 <li class="desc__listed-items">Amount: <?= $order['amount'] ?></li>
                 <li class="desc__listed-items"><?php
                  $priceWithoutSymbol = (float) str_replace(['$', ','], '', $order['Price']);
@@ -124,7 +129,8 @@ $result_orders = $stmt_orders->fetchAll();
                   </ul>
                 </div>
               </div>
-            <?php } ?>
+            <?php }
+          } ?>
             </form>
           </div>
         </div>
@@ -247,6 +253,6 @@ $result_orders = $stmt_orders->fetchAll();
       </footer>
 </main>
 
-    <script src="js/main.js"></script>
+    <script src="../js/order.js"></script>
 </body>
 </html>

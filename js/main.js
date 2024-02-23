@@ -182,3 +182,4 @@ let cardObserver = new IntersectionObserver(function (entries, cardObserver) {
 
 cardObserver.observe(cardContainer);
 
+

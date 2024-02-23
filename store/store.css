@@ -594,6 +594,7 @@ input::-webkit-inner-spin-button {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   cursor: pointer;
   position: relative;
+  font-size: 1.2rem;
 }
 #allClothes-button::before {
   content: "";
@@ -1185,7 +1186,7 @@ body:has(.modal__container[aria-expanded="true"]) main {
   position: absolute;
   top: -4.1px;
   left: -4px;
-  width: 20px;
+  width: 17px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid rgb(104, 104, 104);
@@ -1523,7 +1524,7 @@ footer {
   width: 100%;
 }
 .footer__bottom-container {
-  padding: 2vw 8px;
+  padding: 1vw 8px;
   border-top: 1px solid #000;
   display: flex;
 }

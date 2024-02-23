@@ -2,7 +2,7 @@
 include_once("../Registration/config.php");
 
 if(empty($_SESSION['email'])) {
-  header("Location: index.php");
+  header("Location: http://localhost/Finals/FinalProject-PHP/Registration/Login.php");
 };
 
 $id = $_GET["id"];
